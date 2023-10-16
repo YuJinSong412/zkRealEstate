@@ -66,11 +66,6 @@ namespace CircuitBuilder
 
             H_monthlyRepaymentTable = createInputWire("H_monthlyRepaymentTable");         // CT_table
 
-            //c_1 = createInputWire("c_1");       //     c_1 채무자         CT_debtorPKE_bondKey
-           // c_2 = createInputWire("c_2");       // c_2 : 채권자           CT_creditorPKE_bondKey
-            //c_0_creditorPKE = createInputWire("c_0_creditorPKE");       // CT: c_0
-            //c_1_creditorPKE = createInputWire("c_1_creditorPKE");       //     c_1 
-
 
             /* witnesses */
             r_debtorPKE = createProverWitnessWire("r_debtorPKE");           // r
