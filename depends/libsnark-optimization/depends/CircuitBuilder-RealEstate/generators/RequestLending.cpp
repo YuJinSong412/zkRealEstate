@@ -147,21 +147,10 @@ namespace CircuitBuilder
             12: 담보가치*/
             
             WirePtr loanPeriod= bondData->get(4);       //대출기간
-            WirePtr repaymentMethod = bondData->get(8); //상환방법
-
-
-            WirePtr EI = zeroWire; //원리금균등상환  
-            WirePtr EP = oneWire; //원금균등상환
-            WirePtr PM = oneWire ->add(oneWire); //원금만기일시상환
-
 
             BigInteger num = BigInteger("12");
             // loanPeriod = 12
             addEqualityAssertion(loanPeriod, num, "invalid period");
-
-            //대출개시일 < 대출기간만료일
-            addOneAssertion(bondData->get(6)->isLessThanOrEqual(bondData->get(7), config.LOG2_FIELD_PRIME - 1),"InitationDate less than MaturityDate");
-
 
             //대출기간만료일 = 대출개시일 + 대출기간
             WirePtr result = bondData->get(6)->add(bondData->get(4));
@@ -188,7 +177,7 @@ namespace CircuitBuilder
             addOneAssertion(leftResult->isLessThanOrEqual(rightResult, config.LOG2_FIELD_PRIME - 1),"left greater than right");
 
             leftResult = bondData->get(12)->mul(max);
-            addOneAssertion(leftResult->isGreaterThanOrEqual(leftResult,config.LOG2_FIELD_PRIME - 1), "left less than right");
+            addOneAssertion(leftResult->isGreaterThanOrEqual(rightResult,config.LOG2_FIELD_PRIME - 1), "left less than right");
 
             return;
         }
