@@ -1,0 +1,7 @@
+/Users/song-yujin/dev/zklay/depends/libsnark-optimization/build_workspace/darwin/Snark_release/CMakeFiles/Snark.dir
+/Users/song-yujin/dev/zklay/depends/libsnark-optimization/build_workspace/darwin/Snark_release/CMakeFiles/edit_cache.dir
+/Users/song-yujin/dev/zklay/depends/libsnark-optimization/build_workspace/darwin/Snark_release/CMakeFiles/rebuild_cache.dir
+/Users/song-yujin/dev/zklay/depends/libsnark-optimization/build_workspace/darwin/Snark_release/CMakeFiles/list_install_components.dir
+/Users/song-yujin/dev/zklay/depends/libsnark-optimization/build_workspace/darwin/Snark_release/CMakeFiles/install.dir
+/Users/song-yujin/dev/zklay/depends/libsnark-optimization/build_workspace/darwin/Snark_release/CMakeFiles/install/local.dir
+/Users/song-yujin/dev/zklay/depends/libsnark-optimization/build_workspace/darwin/Snark_release/CMakeFiles/install/strip.dir

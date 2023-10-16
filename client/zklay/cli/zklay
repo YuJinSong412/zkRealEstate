@@ -1,0 +1,63 @@
+#!/usr/bin/env python3
+
+# Copyright (c) 2015-2020 Clearmatics Technologies Ltd
+# Copyright (c) 2021-2021 Zkrypto Inc.
+# Author: H. Oh
+#
+# SPDX-License-Identifier: LGPL-3.0+
+
+from zklay.cli.utils import load_client_config
+from zklay.cli.zklay_deploy import deploy
+from zklay.cli.zklay_gen_address import gen_address
+from zklay.cli.zklay_audit_key_gen import audit_key_gen
+from zklay.cli.zklay_anontransfer import anontransfer
+from zklay.cli.zklay_sync import sync
+from zklay.cli.zklay_ls_notes import ls_notes
+from zklay.cli.zklay_audit import audit
+from zklay.cli.zklay_mint import mint
+from zklay.cli.zklay_postru import postru
+from zklay.cli.TEST import TEST
+from click import group, command, option, pass_context, ClickException, Context, Choice
+from click_default_group import DefaultGroup  # type: ignore
+from typing import Optional
+
+
+@command()
+@pass_context
+def help(ctx: Context) -> None:
+    """
+    Print help and exit
+    """
+    # Note, this command is implemented to ensure that an error is raised if no
+    # subcommand is specified (which also catches errors in scripts).
+    print(ctx.parent.get_help())  # type: ignore
+    raise ClickException("no command specified")
+
+
+@group(cls=DefaultGroup, default_if_no_args=True, default="help")
+@pass_context
+def zklay(
+        ctx: Context) -> None:
+    if ctx.invoked_subcommand == "help":
+        ctx.invoke(help)
+    ctx.ensure_object(dict)
+
+    try:
+        ctx.obj = load_client_config()
+    except FileNotFoundError as e:
+        print("client_config is not found. Use 'zklay-config' first.")
+        exit()
+
+if __name__ == "__main__":
+    zklay.add_command(deploy)
+    zklay.add_command(gen_address)
+    zklay.add_command(audit_key_gen)
+    zklay.add_command(anontransfer)
+    zklay.add_command(sync)
+    zklay.add_command(ls_notes)
+    zklay.add_command(audit)
+    zklay.add_command(TEST)
+    zklay.add_command(mint)
+    zklay.add_command(postru)
+    zklay.add_command(help)
+    zklay()  # pylint: disable=no-value-for-parameter

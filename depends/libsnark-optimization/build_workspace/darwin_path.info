@@ -1,0 +1,1 @@
+export OpenSSL="/opt/homebrew/Cellar/openssl@3/3.1.0"  GMP="/opt/homebrew/Cellar/gmp/6.2.1_1"  OMP="/opt/homebrew/Cellar/libomp/16.0.0"  OpenJDK="/opt/homebrew/Cellar/openjdk@11/11.0.18"  
