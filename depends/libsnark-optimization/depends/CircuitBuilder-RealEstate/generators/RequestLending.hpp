@@ -20,18 +20,20 @@ namespace RealEstate {
 	private:
 
 		/********************* INPUT ***************************/
-        WirePtr CT_debtorKey, CT_creditorKey, CT_bond_balance;
-		WiresPtr CT_bondData;
-        WirePtr id_bond;  //id_collateral
-        WirePtr c_0, c_1, G, c_2;
-        WirePtr CT_table;
+        WirePtr CT_debtorPKE_bondKey, CT_creditorPKE_bondKey, CT_SKE_bondBalance;
+		WiresPtr CT_SKE_bondData;
 
-		WirePtr c_0_creditorPKE, c_1_creditorPKE;
+        WirePtr H_bondID; 
+        WirePtr G_r, G;
+
+        WirePtr H_monthlyRepaymentTable;
 
 		/********************* Witness ***************************/
-        WirePtr r,CT_r, CT_r_, k, ENA_debtor, ENA_creditor, index, bond_balance, PK_enc_debtor, PK_enc_creditor;
-        WiresPtr bond_data;
-        WiresPtr table_balance;
+        WirePtr r_debtorPKE,r_CT_SKE_bondBalance, r_CT_SEK_bondData;
+		WirePtr bondKey, ENA_debtor, ENA_creditor, index_bondID, bondBalance, PK_enc_debtor, PK_enc_creditor;
+        
+		WiresPtr bondData;
+        WiresPtr monthlyRepaymentTable;
 
 		/********************* MerkleTree ***************************/
 		//WirePtr directionSelector;

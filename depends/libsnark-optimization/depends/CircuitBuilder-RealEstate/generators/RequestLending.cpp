@@ -53,107 +53,88 @@ namespace CircuitBuilder
         {
                     
             /* statements */
-            CT_debtorKey = createInputWire("CT_debtorKey");     //채무자의 pk로 Enc
-            CT_creditorKey = createInputWire("CT_creditorKey"); //채권자의 pk로 Enc
-            CT_bondData = createInputWireArray(13, "CT_bondData");  //채권에 적혀있는 data    random을 뺌 -> CT_r
-            CT_bond_balance = createInputWire("CT_bond_balance");   //채권에 적혀있는 잔금 
+            CT_debtorPKE_bondKey = createInputWire("CT_debtorPKE_bondKey");     //채무자의 pk로 Enc     CT_debtorKey
+            CT_creditorPKE_bondKey = createInputWire("CT_creditorPKE_bondKey"); //채권자의 pk로 Enc     CT_creditorKey
+            CT_SKE_bondData = createInputWireArray(13, "CT_SKE_bondData");  //채권에 적혀있는 data    random을 뺌 -> CT_r  CT_bondData
+            CT_SKE_bondBalance = createInputWire("CT_SKE_bondBalance");   //채권에 적혀있는 잔금                         CT_bond_balance
             
-
-            id_bond = createInputWire("id_bond");
-            //id_collateral = createInputWire("id_collateral");
+            H_bondID = createInputWire("H_bondID");   // id_bond
 
             //PKE에서 필요함 
-            c_0 = createInputWire("c_0");       // CT: c_0
-            c_1 = createInputWire("c_1");       //     c_1 채무자
-            c_2 = createInputWire("c_2");       // c_2 : 채권자
+            G_r = createInputWire("G_r");       // CT: c_0              c_0
+            G = createInputWire("G");           // 이거 추가함
 
-            c_0_creditorPKE = createInputWire("c_0_creditorPKE");       // CT: c_0
-            c_1_creditorPKE = createInputWire("c_1_creditorPKE");       //     c_1
+            H_monthlyRepaymentTable = createInputWire("H_monthlyRepaymentTable");         // CT_table
 
+            //c_1 = createInputWire("c_1");       //     c_1 채무자         CT_debtorPKE_bondKey
+           // c_2 = createInputWire("c_2");       // c_2 : 채권자           CT_creditorPKE_bondKey
+            //c_0_creditorPKE = createInputWire("c_0_creditorPKE");       // CT: c_0
+            //c_1_creditorPKE = createInputWire("c_1_creditorPKE");       //     c_1 
 
-            CT_table = createInputWire("CT_table");
 
             /* witnesses */
-            r = createProverWitnessWire("r");
-            CT_r_ = createProverWitnessWire("CT_r_");   //CT_bond_balance에 대한 SKE때 필요한 random값
-            CT_r = createProverWitnessWire("CT_r");     //CT_bondData에 대한 SKE때 필요한 random값
-            k = createProverWitnessWire("k");
-            ENA_debtor = createProverWitnessWire("ENA_debtor");
+            r_debtorPKE = createProverWitnessWire("r_debtorPKE");           // r
+            r_CT_SKE_bondBalance = createProverWitnessWire("r_CT_SKE_bondBalance");   //CT_bond_balance에 대한 SKE때 필요한 random값  ,  CT_r_
+            r_CT_SEK_bondData = createProverWitnessWire("r_CT_SEK_bondData");     //CT_bondData에 대한 SKE때 필요한 random값      ,  CT_r
+            bondKey = createProverWitnessWire("bondKey");           // k
+            ENA_debtor = createProverWitnessWire("ENA_debtor");     
             ENA_creditor = createProverWitnessWire("ENA_creditor");
-            index = createProverWitnessWire("index");
-            bond_balance = createProverWitnessWire("bond_balance");
+            index_bondID = createProverWitnessWire("index_bondID");              //index
+            bondBalance = createProverWitnessWire("bondBalance"); //bond_balance
             PK_enc_debtor = createProverWitnessWire("PK_enc_debtor");
             PK_enc_creditor = createProverWitnessWire("PK_enc_creditor");
 
-            bond_data = createProverWitnessWireArray(bondDataLength, "bond_data"); // : 13
+            bondData = createProverWitnessWireArray(bondDataLength, "bondData"); // : 13   bond_data
+            monthlyRepaymentTable = createProverWitnessWireArray(tableBalanceLength, "monthlyRepaymentTable");   //table_balance
 
-            table_balance = createProverWitnessWireArray(tableBalanceLength, "table_balance");
-
-            //r_creditorPKE = createProverWitnessWire("r_creditorPKE");
-            //k_msg = createProverWitnessWire("k_msg");
 
             vector<WirePtr> nextInputWires;
             HashGadget *hashGadget;
 
-            //id_bond = H(ENA_creditor, ENA_debtor, index)
-            nextInputWires = {ENA_debtor, ENA_creditor, index}; //concat
+            //H_bondID = H(ENA_creditor, ENA_debtor, index_bondID)
+            nextInputWires = {ENA_debtor, ENA_creditor, index_bondID}; //concat
             hashGadget = allocate<HashGadget>(this, nextInputWires);
-            addEqualityAssertion(hashGadget->getOutputWires()[0], id_bond, "addr not equal");
+            addEqualityAssertion(hashGadget->getOutputWires()[0], H_bondID, "H_bondID not equal");
             
             //PKE 시작 -> PK_enc_debtor
-            ECGroupGeneratorGadget *ecGadget = allocate<ECGroupGeneratorGadget>(this, G, r);
-            addEqualityAssertion(ecGadget->getOutputWires()[0], c_0, "c_0 not equal");
+            //c_0 = G^r    -> G_r = G^r
+            ECGroupGeneratorGadget *ecGadget = allocate<ECGroupGeneratorGadget>(this, G, r_debtorPKE);
+            addEqualityAssertion(ecGadget->getOutputWires()[0], G_r, "G_r not equal");
             
-            ecGadget = allocate<ECGroupGeneratorGadget>(this, PK_enc_debtor, r);
-            addEqualityAssertion(ecGadget->getOutputWires()[0]->mul(k), c_1, "c_1' not equal");
+            //c_1 = k*pk_1^r  -> CT_debtorPKE_bondKey = bondKey * PK_enc_debtor^r_debtorPKE
+            ecGadget = allocate<ECGroupGeneratorGadget>(this, PK_enc_debtor, r_debtorPKE);
+            addEqualityAssertion(ecGadget->getOutputWires()[0]->mul(bondKey), CT_debtorPKE_bondKey, "CT_debtorPKE_bondKey not equal");
             
-            ecGadget = allocate<ECGroupGeneratorGadget>(this, PK_enc_creditor, r);
-            addEqualityAssertion(ecGadget->getOutputWires()[0]->mul(k), c_2, "c_2 not equal");
+            //c_2 = k*pk_2^r  -> CT_creditorPKE_bondKey = bondKey * PK_enc_creditor^r_debtorPKE
+            ecGadget = allocate<ECGroupGeneratorGadget>(this, PK_enc_creditor, r_debtorPKE);
+            addEqualityAssertion(ecGadget->getOutputWires()[0]->mul(bondKey), CT_creditorPKE_bondKey, "CT_creditorPKE_bondKey not equal");
 
-            //CT_k_debtor = PKE.ENC(pk_enc_debtor, k_msg)
-            // hashGadget = allocate<HashGadget>(this, k);
-            // addEqualityAssertion(CT_debtorKey, k_msg->add(hashGadget->getOutputWires()[0]), "ciphertext is not equal");
-
-            //PKE 시작 -> pk_enc_creditor
-            // ECGroupGeneratorGadget *ecGadget1 = allocate<ECGroupGeneratorGadget>(this, G, r_creditorPKE);
-            // addEqualityAssertion(ecGadget1->getOutputWires()[0], c_0_creditorPKE, "c_0_creditorPKE not equal");
-
-            // ecGadget1 = allocate<ECGroupGeneratorGadget>(this, PK_enc_creditor, r_creditorPKE);
-            // addEqualityAssertion(ecGadget1->getOutputWires()[0]->mul(k), c_1_creditorPKE, "c_1_creditorPKE not equal");
-
-            //CT_k_creditor = PKE.ENC(pk_enc_creditor, k_msg)
-            // hashGadget = allocate<HashGadget>(this, k);
-            // addEqualityAssertion(CT_creditorKey, k_msg->add(hashGadget->getOutputWires()[0]), "ciphertext is not equal");
-            
-            
-            //CT_bondData = SKE.Enc(k_msg, bond_data)
+            //c_3 = SKE.ENC_k(msg) -> CT_SKE_bondData = SKE.ENC_bondKey(bondData)
+            //r 랜덤으로 뽑고, sct <- msg + PRF_k(r)  ... PRF = H(k||r)   ->   CT_SKE_bondData <- bondData + PRF_bondKey(r_CT_bondData)
             WirePtr CT_bondData_temp;
-            for(int i = 0; i< 13; i++){
-                nextInputWires = {k, CT_r->add(i)}; // k_msg,  CT_r
-                hashGadget = allocate<HashGadget>(this, nextInputWires);
-                CT_bondData_temp = bond_data->get(i)->add(hashGadget->getOutputWires()[0]);
-                addEqualityAssertion(CT_bondData_temp,CT_bondData->get(i), "invalid CT");
-
+            for(int i = 0 ; i < 13 ; i++)
+            {
+                nextInputWires = {bondKey, r_CT_SEK_bondData->add(i)};
+                hashGadget = allocate<HashGadget>(this,nextInputWires);
+                CT_bondData_temp = bondData->get(i)->add(hashGadget->getOutputWires()[0]);
+                addEqualityAssertion(CT_bondData_temp, CT_SKE_bondData->get(i), "invalid CT_SKE_bondData");
             }
 
-            //CT_bond_balance = SKE.Enc(k_msg, bond_balance)
-            nextInputWires = {k, CT_r_};
+            //c_3 = SKE.ENC_k(msg) -> CT_SKE_bondBalance = SKE.ENC_bondKey(bondBalance) 
+            nextInputWires = {bondKey, r_CT_SKE_bondBalance};
             hashGadget = allocate<HashGadget>(this, nextInputWires);
-            addEqualityAssertion(bond_balance->add(hashGadget->getOutputWires()[0]),CT_bond_balance, "invalid CT");
+            addEqualityAssertion(bondBalance->add(hashGadget->getOutputWires()[0]),CT_SKE_bondBalance, "invalid CT_SKE_bondBalance");
 
 
-            //CT_table = H(table_balance)
-            //CT_table = H(table_balance) -> array...
+            //H_monthlyRepaymentTable = H(monthlyRepaymentTable) -> array...
             for(int i = 0 ; i < tableBalanceLength ; i++){
-                nextInputWires.push_back(table_balance->get(i));
+                nextInputWires.push_back(monthlyRepaymentTable->get(i));
             }
-            
+
             hashGadget = allocate<HashGadget>(this, nextInputWires);
-            addEqualityAssertion(hashGadget->getOutputWires()[0], CT_table, "CT_table != H(table_balance)");
+            addEqualityAssertion(hashGadget->getOutputWires()[0], H_monthlyRepaymentTable, "H_monthlyRepaymentTable != H(monthlyRepaymentTable)");
 
-
-
-
+            //채권 안에 있는 대출 계약 내용 중에 양식에 맞춰 제대로 작성되었는지 체크하는 부분
             //////////////////////////////////////////// 숫자
             /*bond_data[13]= 
             0 : 채무자ENA, 
@@ -170,8 +151,8 @@ namespace CircuitBuilder
             11: 총이자, 
             12: 담보가치*/
             
-            WirePtr loanPeriod= bond_data->get(4);
-            WirePtr repaymentMethod = bond_data->get(8);
+            WirePtr loanPeriod= bondData->get(4);       //대출기간
+            WirePtr repaymentMethod = bondData->get(8); //상환방법
 
 
             WirePtr EI = zeroWire; //원리금균등상환  
@@ -184,16 +165,16 @@ namespace CircuitBuilder
             addEqualityAssertion(loanPeriod, num, "invalid period");
 
             //대출개시일 < 대출기간만료일
-            addOneAssertion(bond_data->get(6)->isLessThanOrEqual(bond_data->get(7), config.LOG2_FIELD_PRIME - 1),"InitationDate less than MaturityDate");
+            addOneAssertion(bondData->get(6)->isLessThanOrEqual(bondData->get(7), config.LOG2_FIELD_PRIME - 1),"InitationDate less than MaturityDate");
 
 
             //대출기간만료일 = 대출개시일 + 대출기간
-            WirePtr result = bond_data->get(6)->add(bond_data->get(4));
-            addEqualityAssertion(bond_data->get(7), result,"invalid result");
+            WirePtr result = bondData->get(6)->add(bondData->get(4));
+            addEqualityAssertion(bondData->get(7), result,"invalid result");
             
             //대출금리 = 3% 고정
             num = BigInteger("3");
-            addEqualityAssertion(bond_data->get(10), num,"loanInterestRate != 3"); //3%
+            addEqualityAssertion(bondData->get(10), num,"loanInterestRate != 3"); //3%
             
             //LTV.최소(1%) <= 대출신청금액 / 담보가치*100 <= LTV.최대(70%)
 
@@ -206,161 +187,13 @@ namespace CircuitBuilder
 
             BigInteger num100 = BigInteger("100");
 
-            WirePtr leftResult = bond_data->get(12)->mul(min);
-            WirePtr rightResult = bond_data->get(3)->mul(num100);
+            WirePtr leftResult = bondData->get(12)->mul(min);
+            WirePtr rightResult = bondData->get(3)->mul(num100);
             
             addOneAssertion(leftResult->isLessThanOrEqual(rightResult, config.LOG2_FIELD_PRIME - 1),"left greater than right");
 
-            leftResult = bond_data->get(12)->mul(max);
+            leftResult = bondData->get(12)->mul(max);
             addOneAssertion(leftResult->isGreaterThanOrEqual(leftResult,config.LOG2_FIELD_PRIME - 1), "left less than right");
-
-            
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            //vector<WirePtr> plain = {PK_enc_debtor, k_PKE}; //pk_enc_debtor, k_PKE
-            // for (int i = 0; i < 2; i++)
-            // {
-            //     hashGadget = allocate<HashGadget>(this, k->add(i));
-            //     addEqualityAssertion((*CT_debtorKey)[i], plain[i]->add(hashGadget->getOutputWires()[0]), "ciphertext is not equal");
-            // }
-            
-            
-            // vector<WirePtr> nextInputWires;
-            // HashGadget *hashGadget;
-
-            // WirePtr calculated_bank_value = value_new_user->add(value_new_bank);
-            // addEqualityAssertion(calculated_bank_value, value_bank , 'invalid value');
-
-            // nextInputWires = {PK_bank->get(1), r, value_bank};
-            // hashGadget = allocate<HashGadget>(this, nextInputWires);
-            // addEqualityAssertion(hashGadget->getOutputWires()[0], commitBankValue, "commitBankValue' not equal");
-            
-            // decryption        
-            /* */
-            // BondDecryptionGadget *decGadget = allocate<DecryptionGadget>(this, *cin, sk);
-            // WirePtr v_in = decGadget->getOutputWires()[0];
-            
-            // balance check
-
-            // // pin + v_ - v
-            // WirePtr v_eval = v_in->add(dv)->sub(dv_)->add(pv)->sub(pv_);
-            // addEqualityAssertion(v_out, v_eval, "invalid v_out");
-
-            // commit check
-
-            // hashGadget = allocate<HashGadget>(this, sk);
-            // addEqualityAssertion(hashGadget->getOutputWires()[0], k_b, "k_b not equal");
-        
-            // encryption check
-
-            // ECGroupGeneratorGadget *ecGadget = allocate<ECGroupGeneratorGadget>(this, G, r);
-            // addEqualityAssertion(ecGadget->getOutputWires()[0], G_r, "G_r not equal");
-
-            // ecGadget = allocate<ECGroupGeneratorGadget>(this, k_u_, r);
-            // addEqualityAssertion(ecGadget->getOutputWires()[0]->mul(k), K_u, "K_u' not equal");
-
-            // ecGadget = allocate<ECGroupGeneratorGadget>(this, apk, r);
-            // addEqualityAssertion(ecGadget->getOutputWires()[0]->mul(k), K_a, "K_a' not equal");
-
-            // vector<WirePtr> plain = {du_, dv_, addr_r};
-            // for (int i = 0; i < 3; i++)
-            // {
-            //     hashGadget = allocate<HashGadget>(this, k->add(i));
-            //     addEqualityAssertion((*CT)[i], plain[i]->add(hashGadget->getOutputWires()[0]), "ciphertext is not equal");
-            // }
-
-
-
-
-            // addEqualityAssertion(k, SK_user);
-
-            // vector<WirePtr> nextInputWires;
-            // HashGadget *hashGadget;
-
-            // /* receive a commitment */
-            // hashGadget = allocate<HashGadget>(this, sk);
-            // addEqualityAssertion(hashGadget->getOutputWires()[0], k_b, "k_b not equal");
-
-            // nextInputWires = {k_b, k_u};
-            // hashGadget = allocate<HashGadget>(this, nextInputWires);
-            // addEqualityAssertion(hashGadget->getOutputWires()[0], addr, "addr not equal");
-
-            // nextInputWires = {du, dv, addr};
-            // hashGadget = allocate<HashGadget>(this, nextInputWires);
-            // addEqualityAssertion(hashGadget->getOutputWires()[0], cm, "cm not equal");
-
-            // nextInputWires = {cm, sk};
-            // hashGadget = allocate<HashGadget>(this, nextInputWires);
-            // addEqualityAssertion(hashGadget->getOutputWires()[0], sn, "sn not equal");
-
-            // // membership check
-            // Wires leafWires = {cm};
-            // MerkleTreePathGadget *merkleTreeGadget = allocate<MerkleTreePathGadget>(this, directionSelector, leafWires, *intermediateHashWires, treeHeight, true);
-            // addOneAssertion(dv->isEqualTo(zeroWire)->add(rt->isEqualTo(merkleTreeGadget->getOutputWires()[0]))->checkNonZero(),
-            //                 "membership failed");
-
-            // /* send a commitment */
-            // ECGroupGeneratorGadget *ecGadget = allocate<ECGroupGeneratorGadget>(this, G, r);
-            // addEqualityAssertion(ecGadget->getOutputWires()[0], G_r, "G_r not equal");
-
-            // ecGadget = allocate<ECGroupGeneratorGadget>(this, k_u_, r);
-            // addEqualityAssertion(ecGadget->getOutputWires()[0]->mul(k), K_u, "K_u' not equal");
-
-            // ecGadget = allocate<ECGroupGeneratorGadget>(this, apk, r);
-            // addEqualityAssertion(ecGadget->getOutputWires()[0]->mul(k), K_a, "K_a' not equal");
-
-            // vector<WirePtr> plain = {du_, dv_, addr_r};
-            // for (int i = 0; i < 3; i++)
-            // {
-            //     hashGadget = allocate<HashGadget>(this, k->add(i));
-            //     addEqualityAssertion((*CT)[i], plain[i]->add(hashGadget->getOutputWires()[0]), "ciphertext is not equal");
-            // }
-
-            // nextInputWires = {k_b_, k_u_};
-            // hashGadget = allocate<HashGadget>(this, nextInputWires);
-            // addEqualityAssertion(addr_r, hashGadget->getOutputWires()[0], "addr' is not equal");
-
-            // nextInputWires = {du_, dv_, addr_r};
-            // hashGadget = allocate<HashGadget>(this, nextInputWires);
-            // addEqualityAssertion(hashGadget->getOutputWires()[0], cm_, "cm' not equal");
-
-            // /* balance check */
-            // DecryptionGadget *decGadget = allocate<DecryptionGadget>(this, *cin, sk);
-            // WirePtr v_in = decGadget->getOutputWires()[0];
-            // v_in = v_in->mul(((*cin)[0]->add((*cin)[1]))->checkNonZero()); // if ct == 0 then v_in = 0
-
-            // decGadget = allocate<DecryptionGadget>(this, *cout, sk);
-            // WirePtr v_out = decGadget->getOutputWires()[0];
-
-            // // WirePtr zeroWire = getZeroWire();
-
-            // // pin + v_ - v
-            // WirePtr v_eval = v_in->add(dv)->sub(dv_)->add(pv)->sub(pv_);
-            // addEqualityAssertion(v_out, v_eval, "invalid v_out");
-
-            // addOneAssertion(dv->isGreaterThanOrEqual(zeroWire, config.LOG2_FIELD_PRIME - 1), "dv less than 0");
-            // addOneAssertion(dv_->isGreaterThanOrEqual(zeroWire, config.LOG2_FIELD_PRIME - 1), "dv_ less than 0");
-            // addOneAssertion(pv->isGreaterThanOrEqual(zeroWire, config.LOG2_FIELD_PRIME - 1), "pv less than 0");
-            // addOneAssertion(pv_->isGreaterThanOrEqual(zeroWire, config.LOG2_FIELD_PRIME - 1), "pv_ less than 0");
-            // // assert v >= 0
-            // addOneAssertion(v_in->isGreaterThanOrEqual(zeroWire, config.LOG2_FIELD_PRIME - 1), "v less than 0");
-            // // assert (vout >= 0)
-            // addOneAssertion(v_out->isGreaterThanOrEqual(zeroWire, config.LOG2_FIELD_PRIME - 1), "v_ less than 0");
 
             return;
         }
