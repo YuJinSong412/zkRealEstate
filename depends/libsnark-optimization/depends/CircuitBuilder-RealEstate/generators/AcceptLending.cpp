@@ -55,121 +55,142 @@ namespace CircuitBuilder
         {
 
             /* statements */
-            CT_bondData = createInputWireArray(13, "CT_bondData");
-            
-            CT_bond_balance = createInputWire("CT_bond_balance");
-            id_bond = createInputWire("id_bond");
-            CT_creditorKey = createInputWire("CT_creditorKey");
+            CT_SKE_bondData = createInputWireArray(13, "CT_SKE_bondData");  //채권에 적혀있는 data    random을 뺌 -> CT_r  CT_bondData
+            CT_SKE_bondBalance = createInputWire("CT_SKE_bondBalance");   //채권에 적혀있는 잔금 
+            H_bondID = createInputWire("H_bondID");   // id_bond
 
-            CT_table = createInputWire("CT_table");
+            CT_creditorPKE_bondKey = createInputWire("CT_creditorPKE_bondKey"); //채권자의 pk로 Enc     CT_creditorKey
+            H_monthlyRepaymentTable = createInputWire("H_monthlyRepaymentTable");         // CT_table
 
-            c_0 = createInputWire("c_0");
-            c_1 = createInputWire("c_1");
+            // G_r = createInputWire("G_r");       // CT: c_0              c_0
+            //c_1 = createInputWire("c_1");
 
-            c_0_creditorPKE = createInputWire("c_0_creditorPKE");
-            c_1_creditorPKE = createInputWire("c_1_creditorPKE");
-            G = createInputWire("G");
+            //c_0_creditorPKE = createInputWire("c_0_creditorPKE");
+            CT_creditorPKE_bondKey = createInputWire("CT_creditorPKE_bondKey"); //채권자의 pk로 Enc     CT_creditorKey
+           // G = createInputWire("G");
 
-            C_v_debtor = createInputWire("C_v_debtor");
-            PK_own_debtor = createInputWire("PK_own_debtor");
-            CT_v_debtor = createInputWire("CT_v_debtor");
+            H_loanAmountToReceive_debtor = createInputWire("H_loanAmountToReceiev_debtor");         // C_v_debtor
+            PK_own_debtor = createInputWire("PK_own_debtor"); 
+            //CT_loanAmountToReceive_debtor = createInputWire("CT_loanAmountToReceive_debtor"); //CT_v_debtor
+            CT_loanAmountToReceive_debtor = createInputWireArray(3, "CT_loanAmountToReceive_debtor"); // 수정 원래는 위에.
+
+            //추가
+            G_r_PKE_loanAmountToReceive_debtor = createInputWire("G_r_PKE_loanAmountToReceive_debtor");       
+            CT_debtorPKE_loanAmountToReceive = createInputWire("CT_debtorPKE_loanAmountToReceive");
 
             /*witnesses */
             //k_msg = createProverWitnessWire("k_msg");
-            bond_balance = createProverWitnessWire("bond_balance");
-            index = createProverWitnessWire("index");
+            bondBalance = createProverWitnessWire("bondBalance");
+            index_bondID = createProverWitnessWire("index_bondID");
             PK_enc_creditor = createProverWitnessWire("PK_enc_creditor");
             PK_enc_debtor = createProverWitnessWire("PK_enc_debtor");
 
             ENA_debtor = createProverWitnessWire("ENA_debtor");
             ENA_creditor = createProverWitnessWire("ENA_creditor");
-            old_ENA_creditor = createProverWitnessWire("old_ENA_creditor");
+            ENA_old_creditor = createProverWitnessWire("ENA_old_creditor"); //old_ENA_creditor
 
-            value_old_creditor = createProverWitnessWire("value_old_creditor");//, 이전 ENA 잔고
-            value_new_debtor = createProverWitnessWire("value_new_debtor");// 채권자가 채무자한테 보내야할 돈
-            value_new_creditor = createProverWitnessWire("value_new_creditor");//채권자가 돈 보낸 후 ENA 잔고
+            value_ENA_old_creditor = createProverWitnessWire("value_ENA_old_creditor");//, 이전 ENA 잔고  value_old_creditor
+            loanAmountToReceive_debtor = createProverWitnessWire("loanAmountToReceive_debtor");//value_new_debtor, 채권자가 채무자한테 보내야할 돈
+            value_ENA_new_creditor = createProverWitnessWire("value_ENA_new_creditor");//채권자가 돈 보낸 후 ENA 잔고, value_new_creditor
 
 
-            bond_data = createProverWitnessWireArray(bondDataLength, "bond_data"); // : 13
-            table_balance = createProverWitnessWireArray(tableBalanceLength, "table_balance");
+            bondData = createProverWitnessWireArray(bondDataLength, "bondData"); // : 13
+            monthlyRepaymentTable = createProverWitnessWireArray(tableBalanceLength, "monthlyRepaymentTable"); //table_balance
             
-            //r_creditorPKE = createProverWitnessWire("r_creditorPKE");
-            k = createProverWitnessWire("k");
-            k_ENA_creditor = createProverWitnessWire("k_ENA_creditor");
+            //추가부분!!!!!!!!
+            //PKE에서 필요함  
+            G_r = createInputWire("G_r");       // CT: c_0 
+            SK_enc_creditor = createProverWitnessWire("SK_enc_creditor");  //pkLength = 3;...skLength...?
+            bondKey = createProverWitnessWire("bondKey"); //k
 
-            r_C_v_debtor = createProverWitnessWire("r_C_v_debtor");
-            r = createProverWitnessWire("r");
-            CT_r = createProverWitnessWire("CT_r"); // ENA_creditor
-            CT_r_ = createProverWitnessWire("CT_r_"); //ENA_debtor
+            datas_H_loanAmountToReceive_debtor = createProverWitnessWireArray(3, "datas_H_loanAmountToReceive_debtor");
+
+
+
+
+            //r_creditorPKE = createProverWitnessWire("r_creditorPKE");
+            //bondKey = createProverWitnessWire("bondKey"); //k
+            k_ENA_creditor = createProverWitnessWire("k_ENA_creditor");
+            r_H_loanAmountToReceive_debtor = createProverWitnessWire("r_H_loanAmountToReceive_debtor"); //r_C_v_debtor
+
+            k_PKE_loanAmountToReceive_debtor = createProverWitnessWire("k_PKE_loanAmountToReceive_debtor");
+            r_SKE_loanAmountToReceive_debtor = createProverWitnessWire("r_SKE_loanAmountToReceive_debtor");
+            
+            r_PKE_loanAmountToReceive_debtor = createProverWitnessWire("r_PKE_loanAmountToReceive_debtor");
+            G_PKE_loanAmountToReceive_debtor = createProverWitnessWire("G_PKE_loanAmountToReceive_debtor");
+
+            r_ENA_creditor = createProverWitnessWire("r_ENA_creditor"); // r_ENA_creditor
+            r_old_ENA_creditor = createProverWitnessWire("r_old_ENA_creditor"); //r_old_ENA_creditor
 
 
 
             vector<WirePtr> nextInputWires;
             HashGadget *hashGadget;
 
-            // //id_bond = H(ENA_creditor, ENA_debtor, index)
-            // nextInputWires = {ENA_debtor, ENA_creditor, index}; //concat
-            // hashGadget = allocate<HashGadget>(this, nextInputWires);
-            // addEqualityAssertion(hashGadget->getOutputWires()[0], id_bond, "addr not equal");        
-            
+            //PKE -> bondkey 공유
+            ECGroupGeneratorGadget *ecGadget1 = allocate<ECGroupGeneratorGadget>(this, G_r, SK_enc_creditor); //r_creditorPKE
+            addEqualityAssertion(ecGadget1->getOutputWires()[0]->mul(bondKey), CT_creditorPKE_bondKey, "CT_creditorPKE_bondKey not equal");
 
-            //bond_balance = v'(value_new_debtor) : 채무자한테 줄 돈 dv_->v_priv_out
-            addEqualityAssertion(bond_balance, value_new_debtor, "invalid bond_balance");
+            //bondBalance = v'(loanAmountToReceive_debtor) : 채무자한테 줄 돈 dv_->v_priv_out
+            addEqualityAssertion(bondBalance, loanAmountToReceive_debtor, "invalid bondBalance");
 
-
-            //PKE 시작 -> pk_enc_creditor // 
-            ECGroupGeneratorGadget *ecGadget1 = allocate<ECGroupGeneratorGadget>(this, PK_enc_creditor, r); //r_creditorPKE
-            addEqualityAssertion(ecGadget1->getOutputWires()[0]->mul(k), c_1_creditorPKE, "c_1_creditorPKE not equal");
-            // addEqualityAssertion(ecGadget1->getOutputWires()[0], c_0_creditorPKE, "c_0_creditorPKE not equal");
-
-            // ecGadget1 = allocate<ECGroupGeneratorGadget>(this, PK_enc_creditor, r); //r_creditorPKE
-            // addEqualityAssertion(ecGadget1->getOutputWires()[0]->mul(k), c_1_creditorPKE, "c_0_creditorPKE not equal");
-
-            // //CT_k_creditor = PKE.ENC(pk_enc_creditor, k_msg)
-            // hashGadget = allocate<HashGadget>(this, k);
-            // addEqualityAssertion(CT_creditorKey, k_msg->add(hashGadget->getOutputWires()[0]), "ciphertext is not equal");
-
-            //v' = v+ v'' (이전 ENA 잔고(value_old_creditor), 채권자가 돈 보낸 후 ENA 잔고(value_new_creditor),   채권자가 채무자한테 보내야할 돈(value_new_debtor))
-            WirePtr v_eval = value_new_creditor->add(value_new_debtor);
-            addEqualityAssertion(value_old_creditor, v_eval, "invalid v_out");
-
-            //C_v_debtor = H(pk_own_debtor,r_C_v_debtor, value_new_debtor)
-            nextInputWires = {PK_own_debtor, r_C_v_debtor, value_new_debtor}; //concat
+            //H_loanAmountToReceive_debtor = H(pk_own_debtor,r_H_loanAmountToReceive_debtor, loanAmountToReceive_debtor), 보낼 돈 커밋하고
+            nextInputWires = {PK_own_debtor, r_H_loanAmountToReceive_debtor, loanAmountToReceive_debtor}; //concat
             hashGadget = allocate<HashGadget>(this, nextInputWires);
-            addEqualityAssertion(hashGadget->getOutputWires()[0], C_v_debtor, "C_v_debtor not equal");
+            addEqualityAssertion(hashGadget->getOutputWires()[0], H_loanAmountToReceive_debtor, "H_loanAmountToReceive_debtor not equal");
 
-            //CT_v_debtor = PKE.Enc(PK_enc_debtor, (PK_own_debtor, r_C_v_debtor, value_new_debtor))
-            // ECGroupGeneratorGadget *ecGadget = allocate<ECGroupGeneratorGadget>(this, G, r);
-            // addEqualityAssertion(ecGadget->getOutputWires()[0], c_0, "c_0 not equal");
+            // 여기 수정!! -> 쓸 수 있게 값들 ENC
+            //CT_loanAmountToReceive_debtor = PKE.Enc(PK_enc_debtor, (PK_own_debtor, r_H_loanAmountToReceive_debtor, loanAmountToReceive_debtor))
+                // WirePtr CT_temp;
+                // vector<WirePtr> temp = {PK_own_debtor, r_H_loanAmountToReceive_debtor, loanAmountToReceive_debtor}; //PK_own_debtor 필요?
+                // for(int i = 0; i<3;i++){
+                //     nextInputWires = {k_PKE_loanAmountToReceive_debtor->add(i), r_SKE_loanAmountToReceive_debtor->add(i)};
+                //     hashGadget = allocate<HashGadget>(this, nextInputWires);
+                //     CT_temp = temp[i]->add(hashGadget->getOutputWires()[0]);
+                //     addEqualityAssertion(CT_loanAmountToReceive_debtor, CT_temp, "CT_v_debtor is not equal");
+                // }
+
+            //c_0 = G^r    -> G_r_PKE_loanAmountToReceive_debtor = G_PKE_loanAmountToReceive_debtor^r_PKE_loanAmountToReceive_debtor
+            ECGroupGeneratorGadget *ecGadget = allocate<ECGroupGeneratorGadget>(this, G_PKE_loanAmountToReceive_debtor, r_PKE_loanAmountToReceive_debtor);
+            addEqualityAssertion(ecGadget->getOutputWires()[0], G_r_PKE_loanAmountToReceive_debtor, "G_r_PKE_loanAmountToReceive_debtor not equal");
             
-            // ecGadget = allocate<ECGroupGeneratorGadget>(this, PK_enc_debtor, r);
-            // addEqualityAssertion(ecGadget->getOutputWires()[0]->mul(k), c_1, "c_1' not equal");
-
-            //CT_v_debtor = PKE.Enc(PK_enc_debtor, (PK_own_debtor, r_C_v_debtor, value_new_debtor))
-            WirePtr CT_temp;
-            vector<WirePtr> temp = {PK_own_debtor, r_C_v_debtor, value_new_debtor}; //PK_own_debtor 필요?
-            for(int i = 0; i<3;i++){
-                hashGadget = allocate<HashGadget>(this, k->add(i));
-                CT_temp = temp[i]->add(hashGadget->getOutputWires()[0]);
-                addEqualityAssertion(CT_v_debtor, CT_temp, "CT_v_debtor is not equal");
+            //c_1 = k*pk_1^r  -> CT_debtorPKE_loanAmountToReceive = k_PKE_loanAmountToReceive_debtor * PK_enc_debtor^r_PKE_loanAmountToReceive_debtor
+            ecGadget = allocate<ECGroupGeneratorGadget>(this, PK_enc_debtor, r_PKE_loanAmountToReceive_debtor);
+            addEqualityAssertion(ecGadget->getOutputWires()[0]->mul(k_PKE_loanAmountToReceive_debtor), CT_debtorPKE_loanAmountToReceive, "CT_debtorPKE_loanAmountToReceive not equal");
+            
+            //CT_loanAmountToReceive_debtor = PKE.Enc(PK_enc_debtor, (PK_own_debtor, r_H_loanAmountToReceive_debtor, loanAmountToReceive_debtor))
+            //c_3 = SKE.ENC_k(msg) -> CT_loanAmountToReceive_debtor = SKE.ENC_k_PKE_loanAmountToReceive_debtor(datas_H_loanAmountToReceive_debtor)
+            //r 랜덤으로 뽑고, sct <- msg + PRF_k_PKE_loanAmountToReceive_debtor(r)  ... PRF = H(k||r)   ->   CT_loanAmountToReceive_debtor <- datas_H_loanAmountToReceive_debtor[i] + PRF_k_PKE_loanAmountToReceive_debtor(r_SKE_loanAmountToReceive_debtor)
+            WirePtr CT_debtorPKE_loanAmountToReceive_temp;
+            for(int i = 0 ; i < 3 ; i++)
+            {
+                nextInputWires = {k_PKE_loanAmountToReceive_debtor->add(i), r_SKE_loanAmountToReceive_debtor};
+                hashGadget = allocate<HashGadget>(this,nextInputWires);
+                CT_debtorPKE_loanAmountToReceive_temp = datas_H_loanAmountToReceive_debtor->get(i)->add(hashGadget->getOutputWires()[0]);
+                addEqualityAssertion(CT_debtorPKE_loanAmountToReceive_temp, CT_loanAmountToReceive_debtor->get(i), "invalid CT_loanAmountToReceive_debtor");
             }
 
-            //ENA_creditor = SKE.Enc(k_msg, value_new_creditor)
-            nextInputWires = {k_ENA_creditor, CT_r};
-            hashGadget = allocate<HashGadget>(this, nextInputWires);
-            addEqualityAssertion(value_new_creditor->add(hashGadget->getOutputWires()[0]),ENA_creditor, "invalid CT");
 
-            //old_ENA_creditor = SKE.Enc(k_msg, value_old_creditor)
-            nextInputWires = {k_ENA_creditor, CT_r_};
+            //v' = v+ v'' (이전 ENA 잔고(value_ENA_old_creditor), 채권자가 돈 보낸 후 ENA 잔고(value_ENA_new_creditor),   채권자가 채무자한테 보내야할 돈(loanAmountToReceive_debtor))
+            WirePtr v_eval = value_ENA_new_creditor->add(loanAmountToReceive_debtor);
+            addEqualityAssertion(value_ENA_old_creditor, v_eval, "invalid value_ENA_old_creditor");
+
+            //ENA_creditor = SKE.Enc(k_ENA_creditor, value_ENA_new_creditor) -> 현재 남아있는(update된) 채권자 ENA 잔금 
+            nextInputWires = {k_ENA_creditor, r_ENA_creditor};
             hashGadget = allocate<HashGadget>(this, nextInputWires);
-            addEqualityAssertion(value_old_creditor->add(hashGadget->getOutputWires()[0]),old_ENA_creditor, "invalid CT");
+            addEqualityAssertion(value_ENA_new_creditor->add(hashGadget->getOutputWires()[0]),ENA_creditor, "invalid ENA_creditor");
+
+            //old_ENA_creditor = SKE.Enc(k_ENA_creditor, value_ENA_old_creditor) -> 이전 채권자 ENA 잔금
+            nextInputWires = {k_ENA_creditor, r_old_ENA_creditor};
+            hashGadget = allocate<HashGadget>(this, nextInputWires);
+            addEqualityAssertion(value_ENA_old_creditor->add(hashGadget->getOutputWires()[0]),ENA_old_creditor, "invalid ENA_old_creditor");
 
 
             // assert value_old_creditor >= 0
-            addOneAssertion(value_old_creditor->isGreaterThanOrEqual(zeroWire, config.LOG2_FIELD_PRIME - 1), "value_old_creditor less than 0");
+            addOneAssertion(value_ENA_old_creditor->isGreaterThanOrEqual(zeroWire, config.LOG2_FIELD_PRIME - 1), "value_ENA_old_creditor less than 0");
 
             // assert value_new_debtor >= 0
-            addOneAssertion(value_new_debtor->isGreaterThanOrEqual(zeroWire, config.LOG2_FIELD_PRIME - 1), "value_new_debtor less than 0");
+            addOneAssertion(loanAmountToReceive_debtor->isGreaterThanOrEqual(zeroWire, config.LOG2_FIELD_PRIME - 1), "loanAmountToReceive_debtor less than 0");
 
             // //CT_table = H(table_balance) -> array...
             // for(int i = 0 ; i < tableBalanceLength ; i++){
