@@ -33,6 +33,8 @@ namespace RealEstate {
 
 		//추가
 		WirePtr G_r_PKE_loanAmountToReceive_debtor, CT_debtorPKE_loanAmountToReceive;
+		WirePtr pk_own_creditor, H_originalValue_creditor, nf_creditor;
+		WirePtr H_updateValue_creditor, rt;
 
 		/********************* Witness ***************************/
         WirePtr bondBalance, index_bondID, PK_enc_creditor, PK_enc_debtor;
@@ -55,7 +57,8 @@ namespace RealEstate {
 		WirePtr k_PKE_loanAmountToReceive_debtor, r_SKE_loanAmountToReceive_debtor;
 
 		WiresPtr datas_H_loanAmountToReceive_debtor;
-
+		WirePtr r_H_originalValue_creditor, sk_own_creditor, r_H_updateValue_creditor;
+		
 		/********************* MerkleTree ***************************/
 		WirePtr directionSelector;
 		WiresPtr intermediateHashWires;
