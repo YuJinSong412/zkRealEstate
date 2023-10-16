@@ -51,13 +51,13 @@ namespace RealEstate {
 		WirePtr r_H_loanAmountToReceive_debtor, r;
 		WirePtr r_ENA_creditor, r_old_ENA_creditor;
 
+
 		//추가
 		WirePtr G_PKE_loanAmountToReceive_debtor, r_PKE_loanAmountToReceive_debtor;
 		WirePtr k_PKE_loanAmountToReceive_debtor, r_SKE_loanAmountToReceive_debtor;
 
 		WiresPtr datas_H_loanAmountToReceive_debtor;
 		WirePtr r_H_originalValue_creditor, sk_own_creditor, r_H_updateValue_creditor;
-
 		
 		/********************* MerkleTree ***************************/
 		WirePtr directionSelector;
@@ -71,6 +71,7 @@ namespace RealEstate {
 		static const int bondDataLength = 13;
 
 		static const int tableBalanceLength = 12; //1년으로 고정함
+		
 	
 		// /********************* INPUT ***************************/
         // WiresPtr CT_bondData;
