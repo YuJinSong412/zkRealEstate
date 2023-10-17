@@ -54,8 +54,6 @@ namespace CircuitBuilder
         void Repay::buildCircuit()
         {
 
-            //@@@Hi
-
             /* statements */
             CT_SKE_bondBalance = createInputWire("CT_SKE_bondBalance"); //CT_bond_balance
             cnt = createInputWire("cnt");
