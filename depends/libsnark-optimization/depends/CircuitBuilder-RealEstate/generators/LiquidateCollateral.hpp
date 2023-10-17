@@ -20,12 +20,12 @@ namespace RealEstate {
 	private:
 
 		/********************* INPUT ***************************/
-        WirePtr CT_bond_balance, CT_table, cnt;
-
+        WirePtr CT_SKE_bondBalance, H_monthlyRepaymentTable, cnt;
+		
 		/********************* Witness ***************************/
         
-        WirePtr bond_balance, k_msg;
-		WiresPtr table_balance;
+        WirePtr bondBalance, bondKey;
+		WiresPtr monthlyRepaymentTable;
 
 		/********************* MerkleTree ***************************/
 		WirePtr directionSelector;

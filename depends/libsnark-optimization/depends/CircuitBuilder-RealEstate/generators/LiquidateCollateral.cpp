@@ -54,40 +54,38 @@ namespace CircuitBuilder
         void LiquidateCollateral::buildCircuit()
         {
             /* statements */
-            CT_bond_balance = createInputWire("CT_bond_balance");
-            CT_table = createInputWire("CT_table");
+            CT_SKE_bondBalance = createInputWire("CT_SKE_bondBalance"); // CT_bond_balance
+            H_monthlyRepaymentTable = createInputWire("H_monthlyRepaymentTable"); // CT_table
             cnt = createInputWire("cnt");
 
 
             // /* witnesses */
-            table_balance = createProverWitnessWireArray(tableBalanceLength, "table_balance");
-            bond_balance = createProverWitnessWire("bond_balance");
-            k_msg = createProverWitnessWire("k_msg");
+            monthlyRepaymentTable = createProverWitnessWireArray(tableBalanceLength, "monthlyRepaymentTable"); //table_balance
+            bondBalance = createProverWitnessWire("bondBalance"); //bond_balance
+            bondKey = createProverWitnessWire("bondKey"); //k_msg
 
 
             vector<WirePtr> nextInputWires;
             HashGadget *hashGadget;
 
-            //CT_table = H(table_balance)
-            //CT_table = H(table_balance) -> array...
+            //H_monthlyRepaymentTable = H(monthlyRepaymentTable) -> array...
             for(int i = 0 ; i < tableBalanceLength ; i++){
-                nextInputWires.push_back(table_balance->get(i));
+                nextInputWires.push_back(monthlyRepaymentTable->get(i));
             }
-            
             hashGadget = allocate<HashGadget>(this, nextInputWires);
-            addEqualityAssertion(hashGadget->getOutputWires()[0], CT_table, "CT_table != H(table_balance)");
+            addEqualityAssertion(hashGadget->getOutputWires()[0], H_monthlyRepaymentTable, "H_monthlyRepaymentTable != H(monthlyRepaymentTable)");
 
             
-            // bond_balance = SKE.Dec(k_msg, CT_bond_balance)
-            DecryptionGadget *decGadget = allocate<DecryptionGadget>(this, *CT_bond_balance, k_msg);
-            addEqualityAssertion(decGadget->getOutputWires()[0], bond_balance, "bond_balance not equal");
+            // bondBalance = SKE.Dec(bondKey, CT_SKE_bondBalance)
+            DecryptionGadget *decGadget = allocate<DecryptionGadget>(this, *CT_SKE_bondBalance, bondKey);
+            addEqualityAssertion(decGadget->getOutputWires()[0], bondBalance, "bondBalance not equal");
 
-            //table_balance[cnt] < bond_balance
+            //monthlyRepaymentTable[cnt] < bondBalance
             BigInteger cntBigInteger = ((ConstantWire*) cnt)->getConstant();
             string cntString = cntBigInteger.toString();
            // stol(cntString)
 
-            addOneAssertion(table_balance->get(stol(cntString))->isLessThan(bond_balance, config.LOG2_FIELD_PRIME - 1),"table_balance[cnt] >= bond_balance");
+            addOneAssertion(monthlyRepaymentTable->get(stol(cntString))->isLessThan(bondBalance, config.LOG2_FIELD_PRIME - 1),"monthlyRepaymentTable[cnt] >= bondBalance");
             
 
             return;
