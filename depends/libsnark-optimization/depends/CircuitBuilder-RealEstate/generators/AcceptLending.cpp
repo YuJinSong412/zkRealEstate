@@ -62,16 +62,11 @@ namespace CircuitBuilder
             CT_creditorPKE_bondKey = createInputWire("CT_creditorPKE_bondKey"); //채권자의 pk로 Enc     CT_creditorKey
             H_monthlyRepaymentTable = createInputWire("H_monthlyRepaymentTable");         // CT_table
 
-            // G_r = createInputWire("G_r");       // CT: c_0              c_0
-            //c_1 = createInputWire("c_1");
-
-            //c_0_creditorPKE = createInputWire("c_0_creditorPKE");
             CT_creditorPKE_bondKey = createInputWire("CT_creditorPKE_bondKey"); //채권자의 pk로 Enc     CT_creditorKey
-           // G = createInputWire("G");
 
             H_loanAmountToReceive_debtor = createInputWire("H_loanAmountToReceiev_debtor");         // C_v_debtor
             PK_own_debtor = createInputWire("PK_own_debtor"); 
-            //CT_loanAmountToReceive_debtor = createInputWire("CT_loanAmountToReceive_debtor"); //CT_v_debtor
+            
             CT_loanAmountToReceive_debtor = createInputWireArray(3, "CT_loanAmountToReceive_debtor"); // 수정 원래는 위에.
 
             //추가
@@ -105,7 +100,6 @@ namespace CircuitBuilder
             
             //추가부분!!!!!!!!
             //PKE에서 필요함  
-            G_r = createInputWire("G_r");       // CT: c_0 
             SK_enc_creditor = createProverWitnessWire("SK_enc_creditor");  //pkLength = 3;...skLength...?
             bondKey = createProverWitnessWire("bondKey"); //k
 
@@ -138,6 +132,7 @@ namespace CircuitBuilder
             //bondBalance = v'(loanAmountToReceive_debtor) : 채무자한테 줄 돈 dv_->v_priv_out
             addEqualityAssertion(bondBalance, loanAmountToReceive_debtor, "invalid bondBalance");
 
+            //돈 보내는 부분
             //C_v = H(pk_own_bank, r, v)  ->    H_originalValue_creditor = H(pk_own_creditor, r_H_originalValue_creditor, value_ENA_old_creditor)
             nextInputWires = {pk_own_creditor, r_H_originalValue_creditor, value_ENA_old_creditor};
             hashGadget = allocate<HashGadget>(this, nextInputWires);
