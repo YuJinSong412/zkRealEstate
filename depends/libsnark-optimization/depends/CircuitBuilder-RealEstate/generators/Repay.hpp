@@ -22,27 +22,30 @@ namespace RealEstate {
 
 		/********************* INPUT ***************************/
 
-		WirePtr CT_bond_balance, old_CT_bond_balance, cnt;
+		WirePtr CT_SKE_bondBalance, old_CT_SKE_bondBalance, cnt;
 
-		WirePtr PK_own_creditor;
-		WirePtr C_v_creditor; //azeroth에서 cm
+		WirePtr PK_own_creditor, pk_own_debtor;
+		WirePtr H_repayAmountToReceive_creditor; 
 
-		WirePtr c_0_creditorPKE, c_1_creditorPKE, G;
-		WirePtr CT_v_creditor;
+		WirePtr H_originalValue_debtor, nf_debtor, H_updateValue_debtor;
+		WirePtr rt, G_r_PKE_repayAmountToReceive_creditor, CT_creditorPKE_repayAmountToReceive;
 
-		WirePtr CT_table;
+		WiresPtr CT_repayAmountToReceive_creditor;
+		WirePtr H_monthlyRepaymentTable;
+
 
 		/********************* Witness ***************************/
-        WirePtr value_old_debtor, value_new_creditor, value_new_debtor;//debtor의 이전 ENA 잔고, 보내야할 돈, 돈 보낸후 ENA잔고
+        WirePtr value_ENA_old_debtor, repayAmountToReceive_creditor, value_ENA_new_debtor;
 
-        WirePtr  k_msg, r_update_bond_balance, bond_balance, old_bond_balance, k;
+        WirePtr  bondKey, old_bondBalance, bondBalance, r_H_repayAmountToReceive_creditor;
 
-		WiresPtr table_balance;
+		WirePtr PK_enc_creditor, ENA_debtor, ENA_creditor, old_ENA_debtor, r_CT_SKE_bondBalance;
+		WirePtr r_H_originalValue_debtor, sk_own_debtor, r_H_updateValue_debtor;
+		WirePtr G_PKE_repayAmountToReceive_creditor, r_PKE_repayAmountToReceive_creditor;
+		WirePtr k_PKE_repayAmountToReceive_creditor, r_SKE_repayAmountToReceive_creditor;
+		WirePtr k_ENA_debtor, r_ENA_debtor, r_old_ENA_debtor;
 
-		WirePtr r_C_v_creditor, r, CT_r_, CT_r;
-		WirePtr r_creditorPKE, PK_enc_creditor;
-
-		WirePtr ENA_debtor, ENA_creditor, old_ENA_debtor; // , 업데이트된 sct, 이전 sct
+		WiresPtr datas_H_repayAmountToReceive_creditor, monthlyRepaymentTable;
 		/********************* MerkleTree ***************************/
 		WirePtr directionSelector;
 		WiresPtr intermediateHashWires;
