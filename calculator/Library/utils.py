@@ -7,10 +7,10 @@
 # Parse the arguments given to the script
 
 from __future__ import annotations
-from cli_constants import INSTANCE_FILE_DEFAULT, WALLET_DIR_DEFAULT, TOKEN_INSTANCE_FILE_DEFAULT, ZKLAY_SECRET_ADDRESS_FILE_DEFAULT, ZKLAY_AUDIT_SECRET_ADDRESS_FILE_DEFAULT, ETH_NETWORK_DEFAULT
-from context import ClientConfig
-import constants
-import errors
+from Library.cli_constants import INSTANCE_FILE_DEFAULT, WALLET_DIR_DEFAULT, TOKEN_INSTANCE_FILE_DEFAULT, ZKLAY_SECRET_ADDRESS_FILE_DEFAULT, ZKLAY_AUDIT_SECRET_ADDRESS_FILE_DEFAULT, ETH_NETWORK_DEFAULT
+from Library.context import ClientConfig
+import Library.constants as constants
+import Library.errors as errors
 import argparse
 import sys
 import json
