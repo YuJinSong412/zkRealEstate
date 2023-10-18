@@ -1,7 +1,7 @@
 from Library.utils import bytes_to_int256
-from sha import Sha256
-from mimc import MiMC7
-from poseidon import Poseidon
+from Hash.sha import Sha256
+from Hash.mimc import MiMC7
+from Hash.poseidon import Poseidon
 from Library.context import ClientConfig
 from Library.montgomery_curve import CurveParameters
 

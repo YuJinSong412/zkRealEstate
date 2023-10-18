@@ -11,7 +11,6 @@ from Hash.hash import Hash
 import json
 from typing import Dict, Any, List
 
-
 class ZklayAddressPub:
     """
     Public zklayAddress.  upk = (addr, pk_own, pk_enc). addr = H(pk_own, pk_enc). pk_own : binding key, pk_enc : public key

@@ -1,7 +1,7 @@
 from __future__ import annotations
-from affine_point import AffinePoint
-from utils import modular_sqrt
-from context import ClientConfig
+from Library.affine_point import AffinePoint
+from Library.utils import modular_sqrt
+from Library.context import ClientConfig
 from typing import List
 
 
