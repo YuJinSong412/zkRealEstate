@@ -1,4 +1,4 @@
-from constants import MIMC_MT_SEED
+from Library.constants import MIMC_MT_SEED
 from Crypto.Hash import keccak
 from abc import abstractmethod
 
