@@ -24,7 +24,7 @@ namespace RealEstate {
 		
 		/********************* Witness ***************************/
         
-        WirePtr bondBalance, bondKey;
+        WirePtr bondBalance, bondKey, r_CT_SKE_bondBalance;
 		WiresPtr monthlyRepaymentTable;
 
 		/********************* MerkleTree ***************************/
@@ -38,7 +38,7 @@ namespace RealEstate {
 
 		static const int bondDataLength = 13;
 
-		static const int tableBalanceLength = 12; //1년으로 고정함
+		static const int tableBalanceLength = 13; //1년으로 고정함 + 본인 pk
 
 	protected:
 

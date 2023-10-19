@@ -63,6 +63,7 @@ namespace CircuitBuilder
             monthlyRepaymentTable = createProverWitnessWireArray(tableBalanceLength, "monthlyRepaymentTable"); //table_balance
             bondBalance = createProverWitnessWire("bondBalance"); //bond_balance
             bondKey = createProverWitnessWire("bondKey"); //k_msg
+            r_CT_SKE_bondBalance = createProverWitnessWire("r_CT_SKE_bondBalance"); //r_update_bond_balance
 
 
             vector<WirePtr> nextInputWires;
@@ -76,9 +77,16 @@ namespace CircuitBuilder
             addEqualityAssertion(hashGadget->getOutputWires()[0], H_monthlyRepaymentTable, "H_monthlyRepaymentTable != H(monthlyRepaymentTable)");
 
             
-            // bondBalance = SKE.Dec(bondKey, CT_SKE_bondBalance)
-            DecryptionGadget *decGadget = allocate<DecryptionGadget>(this, *CT_SKE_bondBalance, bondKey);
-            addEqualityAssertion(decGadget->getOutputWires()[0], bondBalance, "bondBalance not equal");
+            // // bondBalance = SKE.Dec(bondKey, CT_SKE_bondBalance)
+            // DecryptionGadget *decGadget = allocate<DecryptionGadget>(this, *CT_SKE_bondBalance, bondKey);
+            // addEqualityAssertion(decGadget->getOutputWires()[0], bondBalance, "bondBalance not equal");
+
+            //CT_SKE_bondBalance = SKE.Enc(bondKey, bondBalance)
+            nextInputWires = {bondKey, r_CT_SKE_bondBalance};
+            hashGadget = allocate<HashGadget>(this, nextInputWires);
+            addEqualityAssertion(bondBalance->add(hashGadget->getOutputWires()[0]),CT_SKE_bondBalance, "invalid CT_SKE_bondBalance");
+
+
 
             //monthlyRepaymentTable[cnt] < bondBalance
             BigInteger cntBigInteger = ((ConstantWire*) cnt)->getConstant();

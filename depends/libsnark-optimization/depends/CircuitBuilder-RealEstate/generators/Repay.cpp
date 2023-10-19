@@ -108,7 +108,7 @@ namespace CircuitBuilder
             k_ENA_debtor = createProverWitnessWire("k_ENA_debtor");
             r_ENA_debtor = createProverWitnessWire("r_ENA_debtor");
             r_old_ENA_debtor = createProverWitnessWire("r_old_ENA_debtor");
-            monthlyRepaymentTable = createProverWitnessWireArray(12, "monthlyRepaymentTable");   //table_balance
+            monthlyRepaymentTable = createProverWitnessWireArray(tableBalanceLength, "monthlyRepaymentTable");   //table_balance
 
 
 
@@ -123,8 +123,15 @@ namespace CircuitBuilder
             addEqualityAssertion(value_ENA_old_debtor, v_eval, "invalid value_ENA_old_debtor");
 
              // old_bondBalance = SKE.Dec(bondKey, old_CT_SKE_bondBalance) -> 이전
-            DecryptionGadget *decGadget2 = allocate<DecryptionGadget>(this, *old_CT_SKE_bondBalance, bondKey);
-            WirePtr old_bondBalance = decGadget2->getOutputWires()[0];
+             // DecryptionGadget *decGadget2 = allocate<DecryptionGadget>(this, *old_CT_SKE_bondBalance, bondKey);
+            // WirePtr old_bondBalance = decGadget2->getOutputWires()[0];
+
+             // old_CT_SKE_bondBalance = SKE.Enc(bondKey, old_bondBalance)
+            nextInputWires = {bondKey, r_CT_SKE_bondBalance};
+            hashGadget = allocate<HashGadget>(this, nextInputWires);
+            addEqualityAssertion(old_bondBalance->add(hashGadget->getOutputWires()[0]),old_CT_SKE_bondBalance, "invalid old_CT_SKE_bondBalance");
+
+
 
             //bondBalance = old_bondBalance - repayAmountToReceive_creditor (update = old - 채권자한테 보내야할 돈)
             WirePtr result = old_bondBalance->sub(repayAmountToReceive_creditor);
