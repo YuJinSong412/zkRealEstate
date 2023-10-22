@@ -39,23 +39,18 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/Users/song-yujin/dev/zklay/depends/libsnark-optimization/lib/darwin_debug/lib/libSnark.dylib")
+   "/Users/song-yujin/dev/zklay/depends/libsnark-optimization/lib/darwin_debug/lib/libSnark.a")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/Users/song-yujin/dev/zklay/depends/libsnark-optimization/lib/darwin_debug/lib" TYPE SHARED_LIBRARY FILES "/Users/song-yujin/dev/zklay/depends/libsnark-optimization/build_workspace/darwin/Snark_debug/libSnark.dylib")
-  if(EXISTS "$ENV{DESTDIR}/Users/song-yujin/dev/zklay/depends/libsnark-optimization/lib/darwin_debug/lib/libSnark.dylib" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/Users/song-yujin/dev/zklay/depends/libsnark-optimization/lib/darwin_debug/lib/libSnark.dylib")
-    if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/Library/Developer/CommandLineTools/usr/bin/strip" -x "$ENV{DESTDIR}/Users/song-yujin/dev/zklay/depends/libsnark-optimization/lib/darwin_debug/lib/libSnark.dylib")
-    endif()
+  file(INSTALL DESTINATION "/Users/song-yujin/dev/zklay/depends/libsnark-optimization/lib/darwin_debug/lib" TYPE STATIC_LIBRARY FILES "/Users/song-yujin/dev/zklay/depends/libsnark-optimization/build_workspace/darwin/Snark_debug/libSnark.a")
+  if(EXISTS "$ENV{DESTDIR}/Users/song-yujin/dev/zklay/depends/libsnark-optimization/lib/darwin_debug/lib/libSnark.a" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/Users/song-yujin/dev/zklay/depends/libsnark-optimization/lib/darwin_debug/lib/libSnark.a")
+    execute_process(COMMAND "/Library/Developer/CommandLineTools/usr/bin/ranlib" "$ENV{DESTDIR}/Users/song-yujin/dev/zklay/depends/libsnark-optimization/lib/darwin_debug/lib/libSnark.a")
   endif()
-endif()
-
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)

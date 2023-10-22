@@ -1035,19 +1035,19 @@ CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/de
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-NFID/generators/NFID.cpp.s"
 	clang++ --target=arm64-apple-darwin --sysroot=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-NFID/generators/NFID.cpp -o CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-NFID/generators/NFID.cpp.s
 
-CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp.o: CMakeFiles/Snark.dir/flags.make
-CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp.o: /Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp
-CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp.o: CMakeFiles/Snark.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/song-yujin/dev/zklay/depends/libsnark-optimization/build_workspace/darwin/Snark_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building CXX object CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp.o"
-	clang++ --target=arm64-apple-darwin --sysroot=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp.o -MF CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp.o.d -o CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp.o -c /Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp
+CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp.o: CMakeFiles/Snark.dir/flags.make
+CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp.o: /Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp
+CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp.o: CMakeFiles/Snark.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/song-yujin/dev/zklay/depends/libsnark-optimization/build_workspace/darwin/Snark_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building CXX object CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp.o"
+	clang++ --target=arm64-apple-darwin --sysroot=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp.o -MF CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp.o.d -o CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp.o -c /Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp
 
-CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp.i"
-	clang++ --target=arm64-apple-darwin --sysroot=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp > CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp.i
+CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp.i"
+	clang++ --target=arm64-apple-darwin --sysroot=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp > CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp.i
 
-CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp.s"
-	clang++ --target=arm64-apple-darwin --sysroot=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp -o CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp.s
+CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp.s"
+	clang++ --target=arm64-apple-darwin --sysroot=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp -o CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp.s
 
 # Object files for target Snark
 Snark_OBJECTS = \
@@ -1120,91 +1120,89 @@ Snark_OBJECTS = \
 "CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-ZKlay/ECGroupExp.cpp.o" \
 "CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-zkzkRollup/generators/zkzkRollup.cpp.o" \
 "CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-NFID/generators/NFID.cpp.o" \
-"CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp.o"
+"CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp.o"
 
 # External object files for target Snark
 Snark_EXTERNAL_OBJECTS =
 
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/api/context_base.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/api/api.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/api/p_input_update.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/api/jni_functions.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/libff/libff/common/profiling.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/libff/libff/common/utils.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/libff/libff/algebra/curves/alt_bn128/alt_bn128_g1.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/libff/libff/algebra/curves/alt_bn128/alt_bn128_g2.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/libff/libff/algebra/curves/alt_bn128/alt_bn128_init.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/libff/libff/algebra/curves/alt_bn128/alt_bn128_pairing.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/libff/libff/algebra/curves/alt_bn128/alt_bn128_pp.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/libff/libff/algebra/curves/bls12_381/bls12_381_fields.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/libff/libff/algebra/curves/bls12_381/bls12_381_g1.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/libff/libff/algebra/curves/bls12_381/bls12_381_g2.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/libff/libff/algebra/curves/bls12_381/bls12_381_init.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/libff/libff/algebra/curves/bls12_381/bls12_381_pairing.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/libff/libff/algebra/curves/bls12_381/bls12_381_pp.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/libsnark/gadgetlib2/infrastructure.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/util/utilities.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/structure/Wire.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/structure/WireArray.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/structure/BitWire.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/operations/primitive/BasicOp.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/operations/primitive/AddBasicOp.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/operations/primitive/MulBasicOp.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/operations/primitive/SquareOp.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/operations/primitive/SquareAndMultiplyOp.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/operations/primitive/ConstMulBasicOp.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/operations/primitive/ConstantSquareOp.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/operations/primitive/ORBasicOp.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/operations/primitive/XorBasicOp.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/operations/primitive/SplitBasicOp.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/operations/primitive/PackBasicOp.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/operations/primitive/AssertBasicOp.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/operations/primitive/NonZeroCheckBasicOp.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/structure/CircuitGenerator/CircuitGenerator.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/structure/CircuitGenerator/AllocationManagement.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/structure/CircuitGenerator/EvaluationQueue.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/eval/CircuitEvaluator.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-Gadgets/diffieHellmanKeyExchange/ECGroupOperationGadget.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-Gadgets/diffieHellmanKeyExchange/ECGroupGeneratorGadget.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-Gadgets/hash/HashGadget.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-Gadgets/hash/MerkleTreePathGadget.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-Gadgets/hash/MerkleTreePathGadget_MiMC7.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-Gadgets/hash/MiMC7Gadget.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-Gadgets/hash/PoseidonGadget.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-Gadgets/hash/SHA256Gadget.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-Gadgets/hash/SubsetSumHashGadget.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-Gadgets/MerkleTreeGadget.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-Gadgets/DecryptionGadget.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/hashes/Keccak256.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/hashes/mimc7_hash.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/hashes/merkle_tree_path.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/hashes/Poseidon.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/ec/curve25519.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/integer_functions/ressol.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/misc/misc.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/json_tree/json_tree.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/google_snappy/snappy-c.cc.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/google_snappy/snappy-sinksource.cc.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/google_snappy/snappy-stubs-internal.cc.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/google_snappy/snappy.cc.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-CRV/generators/Register.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-CRV/generators/Tally.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-CRV/generators/Vote.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-ZKlay/generators/ZKlay.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-ZKlay/ECGroupExp.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-zkzkRollup/generators/zkzkRollup.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-NFID/generators/NFID.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp.o
-libSnark.dylib: CMakeFiles/Snark.dir/build.make
-libSnark.dylib: /opt/homebrew/Cellar/gmp/6.2.1_1/lib/libgmp.a
-libSnark.dylib: /opt/homebrew/Cellar/openssl@3/3.1.0/lib/libcrypto.a
-libSnark.dylib: /opt/homebrew/Cellar/libomp/16.0.0/lib/libomp.a
-libSnark.dylib: CMakeFiles/Snark.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/song-yujin/dev/zklay/depends/libsnark-optimization/build_workspace/darwin/Snark_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Linking CXX shared library libSnark.dylib"
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/api/context_base.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/api/api.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/api/p_input_update.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/api/jni_functions.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/libff/libff/common/profiling.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/libff/libff/common/utils.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/libff/libff/algebra/curves/alt_bn128/alt_bn128_g1.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/libff/libff/algebra/curves/alt_bn128/alt_bn128_g2.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/libff/libff/algebra/curves/alt_bn128/alt_bn128_init.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/libff/libff/algebra/curves/alt_bn128/alt_bn128_pairing.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/libff/libff/algebra/curves/alt_bn128/alt_bn128_pp.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/libff/libff/algebra/curves/bls12_381/bls12_381_fields.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/libff/libff/algebra/curves/bls12_381/bls12_381_g1.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/libff/libff/algebra/curves/bls12_381/bls12_381_g2.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/libff/libff/algebra/curves/bls12_381/bls12_381_init.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/libff/libff/algebra/curves/bls12_381/bls12_381_pairing.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/libff/libff/algebra/curves/bls12_381/bls12_381_pp.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/libsnark/gadgetlib2/infrastructure.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/util/utilities.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/structure/Wire.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/structure/WireArray.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/structure/BitWire.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/operations/primitive/BasicOp.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/operations/primitive/AddBasicOp.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/operations/primitive/MulBasicOp.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/operations/primitive/SquareOp.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/operations/primitive/SquareAndMultiplyOp.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/operations/primitive/ConstMulBasicOp.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/operations/primitive/ConstantSquareOp.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/operations/primitive/ORBasicOp.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/operations/primitive/XorBasicOp.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/operations/primitive/SplitBasicOp.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/operations/primitive/PackBasicOp.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/operations/primitive/AssertBasicOp.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/operations/primitive/NonZeroCheckBasicOp.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/structure/CircuitGenerator/CircuitGenerator.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/structure/CircuitGenerator/AllocationManagement.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/structure/CircuitGenerator/EvaluationQueue.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/eval/CircuitEvaluator.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-Gadgets/diffieHellmanKeyExchange/ECGroupOperationGadget.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-Gadgets/diffieHellmanKeyExchange/ECGroupGeneratorGadget.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-Gadgets/hash/HashGadget.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-Gadgets/hash/MerkleTreePathGadget.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-Gadgets/hash/MerkleTreePathGadget_MiMC7.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-Gadgets/hash/MiMC7Gadget.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-Gadgets/hash/PoseidonGadget.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-Gadgets/hash/SHA256Gadget.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-Gadgets/hash/SubsetSumHashGadget.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-Gadgets/MerkleTreeGadget.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-Gadgets/DecryptionGadget.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/hashes/Keccak256.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/hashes/mimc7_hash.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/hashes/merkle_tree_path.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/hashes/Poseidon.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/ec/curve25519.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/integer_functions/ressol.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/misc/misc.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/json_tree/json_tree.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/google_snappy/snappy-c.cc.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/google_snappy/snappy-sinksource.cc.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/google_snappy/snappy-stubs-internal.cc.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/google_snappy/snappy.cc.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-CRV/generators/Register.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-CRV/generators/Tally.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-CRV/generators/Vote.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-ZKlay/generators/ZKlay.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-ZKlay/ECGroupExp.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-zkzkRollup/generators/zkzkRollup.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-NFID/generators/NFID.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp.o
+libSnark.a: CMakeFiles/Snark.dir/build.make
+libSnark.a: CMakeFiles/Snark.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/song-yujin/dev/zklay/depends/libsnark-optimization/build_workspace/darwin/Snark_debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Linking CXX static library libSnark.a"
+	$(CMAKE_COMMAND) -P CMakeFiles/Snark.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Snark.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/Snark.dir/build: libSnark.dylib
+CMakeFiles/Snark.dir/build: libSnark.a
 .PHONY : CMakeFiles/Snark.dir/build
 
 CMakeFiles/Snark.dir/clean:

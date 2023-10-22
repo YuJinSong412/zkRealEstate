@@ -1,1 +1,1 @@
-/Users/song-yujin/dev/zklay/depends/libsnark-optimization/lib/darwin_debug/lib/libSnark.dylib
+/Users/song-yujin/dev/zklay/depends/libsnark-optimization/lib/darwin_debug/lib/libSnark.a

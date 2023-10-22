@@ -979,93 +979,134 @@
     ],
     "RealEstate": [
         {
-            "commitBankValue": "1",
-            "commitUserNewValue": "1",
-            "commitBankNewValue": "1",
-            "nf": "1",
-            "CT_userMoney": {
-                "0": "225f1a1cd4f11d157ac4c33623f4429af404e8c315f635eaebd2cb2f25fd3894",
-                "1": "0076312594bd94d0349c3222d69a26b666a6f0ac077bd1a9577b44a3dcff10e8",
-                "2": "2fbb6d99e7f9228218938fd4577d029bf2594a2d2a4b694ddf79780173d6cf3e"
+            "CT_debtorPKE_bondKey": "6806ab0fb0e4ea6b68c459a018d47224795a651a4f1d63754e6aed721fd3efc7",
+            "CT_creditorPKE_bondKey": "4083d93aeefe105ab65563647faac4d169884459cbe8acb4c70f1078090fe8cd",
+            "CT_SKE_bondBalance": "64bb795a856dd5d3cbd07867e54ab9e8a2b3a2950723048f8dfd56909cd51137",
+            "CT_SKE_bondData": {
+              "0": "181c7d042009ad467fc5f31015c3a8bf41692d64c6ba4006167d85a0b51a9761",
+              "1": "111350c27b856d85e2edac56175eefe4829ceba43b3d0defbe6c8240ebc7ea4e",
+              "2": "4f84e7d0dba1aa6a01b89ca1dbc9e4f8ea5a4f4cb30984878a78b0204d1890cc",
+              "3": "1544cf9fccd995f45c4feb5f9cee58b39586c372c85c7793083d53575af55b35",
+              "4": "51049a0e46818b724390bb4e92d7a87bf7b05146efdbc4ed411d3e8fb639af0b",
+              "5": "5863731fe8e5dde58847b36799fb9b900b32fd10c2e03322087084df9eb13801",
+              "6": "1f46027deb8b8e22ce641bbc1b6b174040a388a2e2fa31a7ccc42070fd5512e6",
+              "7": "2ef1c98daff18afc7fe39a6118cf7247793b2a2d2b16ae62e37038de9b168433",
+              "8": "6df76db6b846bc7251413e92e334b0cad7bc1a9af21a7e4c2308426aebadb0b9",
+              "9": "56905ad4818360e7626837b21fbb676f176d37221536324801f3607f36d573f5",
+              "10": "4e93c87ba4502f929a204052e9ef28ab99c0f8e883cb51038c4ac5505b284b48",
+              "11": "4b0ceeaf68e86d4088e35f02a9e79a891419a6d1a9fd95581c34ebca18cc738b",
+              "12": "3d20fba56a09c1d5a12bfd1265449226932a70d3fe58b0c524294988b9aca27d"
             },
-            "CT_bankMoney": {
-                "0": "225f1a1cd4f11d157ac4c33623f4429af404e8c315f635eaebd2cb2f25fd3894",
-                "1": "0076312594bd94d0349c3222d69a26b666a6f0ac077bd1a9577b44a3dcff10e8",
-                "2": "2fbb6d99e7f9228218938fd4577d029bf2594a2d2a4b694ddf79780173d6cf3e"
+            "H_bondID": "092b35426883bef8b26b7126e1dd193f701bd2aa4c7d172af06698c83d5e3ecb",
+            "G_r": "3bff9a6534872a970bd04c5acc2e31e065809d6c1d0ffff3a316c93badcd8ba2",
+            "G": "67c5b5fed18254e8acb66c1e38f33ee0975ae6876f9c5266a883f4604024b3b8",
+            "H_monthlyRepaymentTable": "1fb4c814fb1a8cba1540037c688c5b4132e543198954b53c7073c05ae9f9b97e",
+            "r_debtorPKE": "38457e3d3b03ec18bcc5b240bd372497bb832de18b235f22c2f4340b0afe938",
+            "r_CT_SKE_bondBalance": "448172f1e79b205c97d4e332d53ba0eb5c27a1a9612244d939a4d44e1156915",
+            "r_CT_SKE_bondData": "3534002ed541aaea00743a8fe7b6dd1c19b0fc235106e5f94c222dc0338a9",
+            "bondKey": "37f311b6480079c76dcb85eade8885ef329fe6411a7f8926a73ff40cbbf1b986",
+            "ENA_debtor": "37ceb2cd7a634b96154ebd1a0d9b2bdb3ebc001f2b536dd574a1a8ed203fdc9c",
+      
+            "ENA_creditor": "5c14950534b40fd5c02c9e24f6b412117254f4633066972c2dbcc8342cfa7ade",
+            "index_bondID": "1",
+            "bondBalance": "7270e00",
+            "PK_enc_debtor": "45c772792881c57e732f9b64ac132ff4042029e83add427ac86c8143a9f37ee",
+            "PK_enc_creditor": "11309f2840bff3f891f1c15651994532f095d6ce68d1771a1ba3e3baca3ede70",
+            "bondData": {
+              "0": "37ceb2cd7a634b96154ebd1a0d9b2bdb3ebc001f2b536dd574a1a8ed203fdc9c",
+              "1": "5c14950534b40fd5c02c9e24f6b412117254f4633066972c2dbcc8342cfa7ade",
+              "2": "1",
+              "3": "5f5e100",
+              "4": "c",
+              "5": "0",
+              "6": "c",
+              "7": "18",
+              "8": "1",
+              "9": "1e",
+              "10": "14",
+              "11": "1312d00",
+              "12": "17d78400"
             },
-            "CT_userKey": {
-                "0": "225f1a1cd4f11d157ac4c33623f4429af404e8c315f635eaebd2cb2f25fd3894",
-                "1": "0076312594bd94d0349c3222d69a26b666a6f0ac077bd1a9577b44a3dcff10e8",
-                "2": "2fbb6d99e7f9228218938fd4577d029bf2594a2d2a4b694ddf79780173d6cf3e"
+            "monthlyRepaymentTable": {
+              "0": "989680",
+              "1": "989680",
+              "2": "989680",
+              "3": "989680",
+              "4": "989680",
+              "5": "989680",
+              "6": "989680",
+              "7": "989680",
+              "8": "989680",
+              "9": "989680",
+              "10": "989680",
+              "11": "989680"
+            }
+        }
+
+    ],
+    "RealEstate_v": [
+        {
+            "CT_debtorPKE_bondKey": "6806ab0fb0e4ea6b68c459a018d47224795a651a4f1d63754e6aed721fd3efc7",
+            "CT_creditorPKE_bondKey": "4083d93aeefe105ab65563647faac4d169884459cbe8acb4c70f1078090fe8cd",
+            "CT_SKE_bondBalance": "64bb795a856dd5d3cbd07867e54ab9e8a2b3a2950723048f8dfd56909cd51137",
+            "CT_SKE_bondData": {
+              "0": "181c7d042009ad467fc5f31015c3a8bf41692d64c6ba4006167d85a0b51a9761",
+              "1": "111350c27b856d85e2edac56175eefe4829ceba43b3d0defbe6c8240ebc7ea4e",
+              "2": "4f84e7d0dba1aa6a01b89ca1dbc9e4f8ea5a4f4cb30984878a78b0204d1890cc",
+              "3": "1544cf9fccd995f45c4feb5f9cee58b39586c372c85c7793083d53575af55b35",
+              "4": "51049a0e46818b724390bb4e92d7a87bf7b05146efdbc4ed411d3e8fb639af0b",
+              "5": "5863731fe8e5dde58847b36799fb9b900b32fd10c2e03322087084df9eb13801",
+              "6": "1f46027deb8b8e22ce641bbc1b6b174040a388a2e2fa31a7ccc42070fd5512e6",
+              "7": "2ef1c98daff18afc7fe39a6118cf7247793b2a2d2b16ae62e37038de9b168433",
+              "8": "6df76db6b846bc7251413e92e334b0cad7bc1a9af21a7e4c2308426aebadb0b9",
+              "9": "56905ad4818360e7626837b21fbb676f176d37221536324801f3607f36d573f5",
+              "10": "4e93c87ba4502f929a204052e9ef28ab99c0f8e883cb51038c4ac5505b284b48",
+              "11": "4b0ceeaf68e86d4088e35f02a9e79a891419a6d1a9fd95581c34ebca18cc738b",
+              "12": "3d20fba56a09c1d5a12bfd1265449226932a70d3fe58b0c524294988b9aca27d"
             },
-            "CT_bankKey": {
-                "0": "225f1a1cd4f11d157ac4c33623f4429af404e8c315f635eaebd2cb2f25fd3894",
-                "1": "0076312594bd94d0349c3222d69a26b666a6f0ac077bd1a9577b44a3dcff10e8",
-                "2": "2fbb6d99e7f9228218938fd4577d029bf2594a2d2a4b694ddf79780173d6cf3e"
+            "H_bondID": "092b35426883bef8b26b7126e1dd193f701bd2aa4c7d172af06698c83d5e3ecb",
+            "G_r": "3bff9a6534872a970bd04c5acc2e31e065809d6c1d0ffff3a316c93badcd8ba2",
+            "G": "67c5b5fed18254e8acb66c1e38f33ee0975ae6876f9c5266a883f4604024b3b8",
+            "H_monthlyRepaymentTable": "1fb4c814fb1a8cba1540037c688c5b4132e543198954b53c7073c05ae9f9b97e",
+            "r_debtorPKE": "38457e3d3b03ec18bcc5b240bd372497bb832de18b235f22c2f4340b0afe938",
+            "r_CT_SKE_bondBalance": "448172f1e79b205c97d4e332d53ba0eb5c27a1a9612244d939a4d44e1156915",
+            "r_CT_SKE_bondData": "3534002ed541aaea00743a8fe7b6dd1c19b0fc235106e5f94c222dc0338a9",
+            "bondKey": "37f311b6480079c76dcb85eade8885ef329fe6411a7f8926a73ff40cbbf1b986",
+            "ENA_debtor": "37ceb2cd7a634b96154ebd1a0d9b2bdb3ebc001f2b536dd574a1a8ed203fdc9c",
+      
+            "ENA_creditor": "5c14950534b40fd5c02c9e24f6b412117254f4633066972c2dbcc8342cfa7ade",
+            "index_bondID": "1",
+            "bondBalance": "7270e00",
+            "PK_enc_debtor": "45c772792881c57e732f9b64ac132ff4042029e83add427ac86c8143a9f37ee",
+            "PK_enc_creditor": "11309f2840bff3f891f1c15651994532f095d6ce68d1771a1ba3e3baca3ede70",
+            "bondData": {
+              "0": "37ceb2cd7a634b96154ebd1a0d9b2bdb3ebc001f2b536dd574a1a8ed203fdc9c",
+              "1": "5c14950534b40fd5c02c9e24f6b412117254f4633066972c2dbcc8342cfa7ade",
+              "2": "1",
+              "3": "5f5e100",
+              "4": "c",
+              "5": "0",
+              "6": "c",
+              "7": "18",
+              "8": "1",
+              "9": "1e",
+              "10": "14",
+              "11": "1312d00",
+              "12": "17d78400"
             },
-            "CT_bond": {
-                "0": "225f1a1cd4f11d157ac4c33623f4429af404e8c315f635eaebd2cb2f25fd3894",
-                "1": "0076312594bd94d0349c3222d69a26b666a6f0ac077bd1a9577b44a3dcff10e8"
-            },
-            "CT_bond_balance": {
-                "0": "225f1a1cd4f11d157ac4c33623f4429af404e8c315f635eaebd2cb2f25fd3894",
-                "1": "0076312594bd94d0349c3222d69a26b666a6f0ac077bd1a9577b44a3dcff10e8"
-            },
-            "PK_bank": {
-                "0": "225f1a1cd4f11d157ac4c33623f4429af404e8c315f635eaebd2cb2f25fd3894",
-                "1": "0076312594bd94d0349c3222d69a26b666a6f0ac077bd1a9577b44a3dcff10e8",
-                "2": "2fbb6d99e7f9228218938fd4577d029bf2594a2d2a4b694ddf79780173d6cf3e"
-            },
-            "PK_user": {
-                "0": "225f1a1cd4f11d157ac4c33623f4429af404e8c315f635eaebd2cb2f25fd3894",
-                "1": "0076312594bd94d0349c3222d69a26b666a6f0ac077bd1a9577b44a3dcff10e8",
-                "2": "2fbb6d99e7f9228218938fd4577d029bf2594a2d2a4b694ddf79780173d6cf3e"
-            },
-            "LoanPeriod": "1",
-            "RetentionPeriod": "1",
-            "id_bond": "1",
-            "r": "1",
-            "value_bank": "1",
-            "value_new_user": "1",
-            "value_new_bank": "1",
-            "data_balance": "1",
-            "SK_user": "12",
-            "SK_bank": "1",
-            "k": "1",
-            "directionSelector": "1",
-            "intermediateHashes": {
-                "0": "0000000000000000000000000000000000000000000000000000000000000000",
-                "1": "03b075046b71ff5f8e0792de4b82ddc979fcb3b8c03abe12972e65c57759fb46",
-                "10": "0e0aea3bb54cf5a376420bf24342a45055cb5690847caa245b511d5751dcf421",
-                "11": "1339a4376d14f1a01dbad079c336ca59aa8622539a8e1f1746226bc475a22703",
-                "12": "2b7c3227b1cc3a798e0471f25c9d5b663c3041333d12de3c1c46d6452abc4e3c",
-                "13": "1feabc1ac1e0c537037a794d0d7dea1c4e8d82569a6141106342ef83ef72393e",
-                "14": "2bdfef13771eb18207331cdb229d19e85a18fe7ba53229f7912f58cb302dd714",
-                "15": "29c64a37cec960cfcf3cd9cbf3e7fef403b527c416c29f289269109b2a8eba2e",
-                "16": "08f256c0a2bf7a0be862f79038aa9cdfba2e0e29b757a799ce6aa45068b774cc",
-                "17": "0b6f48624bd29cb174aff792c65be4d172019cc66f296366278f1eb0db1f0034",
-                "18": "0ad1887a0101a0b23d12a1b590587514eaad100b5a372ff54f72d91dbb79dcb4",
-                "19": "29cde2e2f34433586c85177a7b0cad21fc8eba8ab756a07472bcc3bfad006aab",
-                "2": "0ecb5caf1e681abdd1fed5e9726cad24ce01610548fdb5cce28e584d2a6960ef",
-                "20": "29d2267cb6d3e620ea34fc1611ab1a8a7ee37b89671b0a2735ee5d3183cee1b9",
-                "21": "2bb811f24a7466d96c824b31b2f1fec9f6cd42ca32d729b3709ebc1f48602b92",
-                "22": "2eaf044361f492f75607e9a1e942b1b12b7402eec08dd9388bdc556e88a20099",
-                "23": "184039fe6f404b2e9b5941eb0a8145934615998433f052a44f3952457858e6f5",
-                "24": "0a5b430cab4177780e623cbd8cabaee6e95f6d693f9e75e742f6f83b660661d9",
-                "25": "27941c0e9dd80f0ac13a0d9917ee4d5ac347d40c4441756097d6750eeea972a8",
-                "26": "171d6c8d4505cfafab241127dcfa75715e9dfb3de3747d6df4659be5070b02ff",
-                "27": "2ab54176da5c9ef8853a00be13505df1ab29bf56b7a413624814a194ed942c50",
-                "28": "289e7394d36cb86c3cba53b8e0e0d1d7fbe353d903ab3ccaa04f656a54452455",
-                "29": "0e13f5cd6281d5863d6e91160add7debeb0751d942818a49c8d264b80a058374",
-                "3": "056c172cb39f99c649521405330e8408612a85fa3cef35ab432554c5caf60483",
-                "30": "23ec7b8217cb9dc3a65c0dab30f55029376effc8539004c40272366c0b79ee35",
-                "31": "0037193face0470119d23f089acead56e4f15c5fd3aa3d574d9bec55f52a8ba1",
-                "4": "2f80812ddaf344b74afb58e7dd38b521d90d772bbec62b2e687240e734d9942b",
-                "5": "22297ed1138fb7fc39a0ec3bf463928c1958367889eb9af4464921c619730dc3",
-                "6": "17fcce9c372014126a0af8fa05a2bbd8fcc49a78d64a5ad0dc4281a1a2066a09",
-                "7": "0e40bc1a41b8723c21872165853552580652941caa3656986ea62557ce2cdb2f",
-                "8": "1a4429526192ad280ee9ff453bf4650953db4c94cba1c09a44094f1a48a49fd6",
-                "9": "2059be0ad2ab748b1b43c42c344a52fa93a44f94d5285b134c2a5b0a3a41224b"
+            "monthlyRepaymentTable": {
+              "0": "989680",
+              "1": "989680",
+              "2": "989680",
+              "3": "989680",
+              "4": "989680",
+              "5": "989680",
+              "6": "989680",
+              "7": "989680",
+              "8": "989680",
+              "9": "989680",
+              "10": "989680",
+              "11": "989680"
             }
         }
     ]

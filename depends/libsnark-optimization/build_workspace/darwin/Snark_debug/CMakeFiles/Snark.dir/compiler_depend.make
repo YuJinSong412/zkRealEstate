@@ -5139,7 +5139,7 @@ CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/de
   /Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/operations/Gadget.hpp \
   /Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-Gadgets/hash/MerkleTreePathGadget.hpp
 
-CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp.o: /Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp \
+CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp.o: /Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp \
   /opt/homebrew/opt/llvm@11/include/c++/v1/limits \
   /opt/homebrew/opt/llvm@11/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h \
@@ -5411,7 +5411,7 @@ CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/de
   /Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/operations/primitive/MulBasicOp.hpp \
   /Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/operations/primitive/AssertBasicOp.hpp \
   /Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/util/Exceptions.hpp \
-  /Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.hpp \
+  /Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.hpp \
   /Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/Gadgets/BondDecryptionGadget.hpp \
   /Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder/circuit/operations/Gadget.hpp \
   /Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-Gadgets/hash/HashGadget.hpp \
@@ -17969,6 +17969,8 @@ CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/li
 
 /Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/libff/libff/algebra/curves/alt_bn128/alt_bn128_pp.cpp:
 
+/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/libff/libff/algebra/curves/alt_bn128/alt_bn128_g2.cpp:
+
 /Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/json_tree/rapidjson/internal/diyfp.h:
 
 /Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/json_tree/rapidjson/internal/biginteger.h:
@@ -18081,9 +18083,9 @@ CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/li
 
 /Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/Gadgets/BondDecryptionGadget.hpp:
 
-/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/libff/libff/algebra/curves/alt_bn128/alt_bn128_g2.cpp:
+/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.hpp:
 
-/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp:
+/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp:
 
 /Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-NFID/generators/NFID.cpp:
 
@@ -18364,8 +18366,6 @@ CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/li
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_size_t.h:
 
 /Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/libff/libff/algebra/fields/fp6_3over2.hpp:
-
-/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.hpp:
 
 /opt/homebrew/opt/llvm@11/include/c++/v1/cassert:
 

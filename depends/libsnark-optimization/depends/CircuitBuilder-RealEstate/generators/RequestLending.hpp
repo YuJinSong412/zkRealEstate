@@ -29,7 +29,7 @@ namespace RealEstate {
         WirePtr H_monthlyRepaymentTable;
 
 		/********************* Witness ***************************/
-        WirePtr r_debtorPKE,r_CT_SKE_bondBalance, r_CT_SEK_bondData;
+        WirePtr r_debtorPKE,r_CT_SKE_bondBalance, r_CT_SKE_bondData;
 		WirePtr bondKey, ENA_debtor, ENA_creditor, index_bondID, bondBalance, PK_enc_debtor, PK_enc_creditor;
         
 		WiresPtr bondData;
@@ -45,7 +45,7 @@ namespace RealEstate {
 		//int treeHeight;
 		BigInteger G1_GENERATOR;
 
-        static const int tableBalanceLength = 12; //1년으로 고정함
+        static const int tableBalanceLength = 13; //1년으로 고정함 + 본인의 pk
 
 	protected:
 

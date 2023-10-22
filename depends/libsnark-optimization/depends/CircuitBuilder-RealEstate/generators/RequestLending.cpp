@@ -70,7 +70,7 @@ namespace CircuitBuilder
             /* witnesses */
             r_debtorPKE = createProverWitnessWire("r_debtorPKE");           // r
             r_CT_SKE_bondBalance = createProverWitnessWire("r_CT_SKE_bondBalance");   //CT_bond_balance에 대한 SKE때 필요한 random값  ,  CT_r_
-            r_CT_SEK_bondData = createProverWitnessWire("r_CT_SEK_bondData");     //CT_bondData에 대한 SKE때 필요한 random값      ,  CT_r
+            r_CT_SKE_bondData = createProverWitnessWire("r_CT_SKE_bondData");     //CT_bondData에 대한 SKE때 필요한 random값      ,  CT_r
             bondKey = createProverWitnessWire("bondKey");           // k
             ENA_debtor = createProverWitnessWire("ENA_debtor");     
             ENA_creditor = createProverWitnessWire("ENA_creditor");
@@ -87,6 +87,7 @@ namespace CircuitBuilder
             HashGadget *hashGadget;
 
             //H_bondID = H(ENA_creditor, ENA_debtor, index_bondID)
+            // nextInputWires = {ENA_debtor, ENA_creditor, index_bondID}; //concat
             nextInputWires = {ENA_debtor, ENA_creditor, index_bondID}; //concat
             hashGadget = allocate<HashGadget>(this, nextInputWires);
             addEqualityAssertion(hashGadget->getOutputWires()[0], H_bondID, "H_bondID not equal");
@@ -109,7 +110,7 @@ namespace CircuitBuilder
             WirePtr CT_bondData_temp;
             for(int i = 0 ; i < 13 ; i++)
             {
-                nextInputWires = {bondKey, r_CT_SEK_bondData->add(i)};
+                nextInputWires = {bondKey, r_CT_SKE_bondData->add(i)};
                 hashGadget = allocate<HashGadget>(this,nextInputWires);
                 CT_bondData_temp = bondData->get(i)->add(hashGadget->getOutputWires()[0]);
                 addEqualityAssertion(CT_bondData_temp, CT_SKE_bondData->get(i), "invalid CT_SKE_bondData");
@@ -129,55 +130,55 @@ namespace CircuitBuilder
             hashGadget = allocate<HashGadget>(this, nextInputWires);
             addEqualityAssertion(hashGadget->getOutputWires()[0], H_monthlyRepaymentTable, "H_monthlyRepaymentTable != H(monthlyRepaymentTable)");
 
-            //채권 안에 있는 대출 계약 내용 중에 양식에 맞춰 제대로 작성되었는지 체크하는 부분
-            //////////////////////////////////////////// 숫자
-            /*bond_data[13]= 
-            0 : 채무자ENA, 
-            1 : 채권자ENA, 
-            2 : 상품명(상품번호), 
-            3 : 대출신청금액, 
-            4 : 대출기간, 
-            5 : 거치기간, 
-            6 : 대출개시일, 
-            7 : 대출기간만료일, 
-            8 : 상환방법, 
-            9 : 주택담보대출비율, 
-            10: 대출금리, 
-            11: 총이자, 
-            12: 담보가치*/
+            // //채권 안에 있는 대출 계약 내용 중에 양식에 맞춰 제대로 작성되었는지 체크하는 부분
+            // //////////////////////////////////////////// 숫자
+            // /*bond_data[13]= 
+            // 0 : 채무자ENA, 
+            // 1 : 채권자ENA, 
+            // 2 : 상품명(상품번호), 
+            // 3 : 대출신청금액, 
+            // 4 : 대출기간, 
+            // 5 : 거치기간, 
+            // 6 : 대출개시일, 
+            // 7 : 대출기간만료일, 
+            // 8 : 상환방법, 
+            // 9 : 주택담보대출비율, 
+            // 10: 대출금리, 
+            // 11: 총이자, 
+            // 12: 담보가치*/
             
-            WirePtr loanPeriod= bondData->get(4);       //대출기간
+            // WirePtr loanPeriod= bondData->get(4);       //대출기간
 
-            BigInteger num = BigInteger("12");
-            // loanPeriod = 12
-            addEqualityAssertion(loanPeriod, num, "invalid period");
+            // BigInteger num = BigInteger("12");
+            // // loanPeriod = 12
+            // addEqualityAssertion(loanPeriod, num, "invalid period");
 
-            //대출기간만료일 = 대출개시일 + 대출기간
-            WirePtr result = bondData->get(6)->add(bondData->get(4));
-            addEqualityAssertion(bondData->get(7), result,"invalid result");
+            // //대출기간만료일 = 대출개시일 + 대출기간
+            // WirePtr result = bondData->get(6)->add(bondData->get(4));
+            // addEqualityAssertion(bondData->get(7), result,"invalid result");
             
-            //대출금리 = 3% 고정
-            num = BigInteger("3");
-            addEqualityAssertion(bondData->get(10), num,"loanInterestRate != 3"); //3%
+            // //대출금리 = 3% 고정
+            // num = BigInteger("3");
+            // addEqualityAssertion(bondData->get(10), num,"loanInterestRate != 3"); //3%
             
-            //LTV.최소(1%) <= 대출신청금액 / 담보가치*100 <= LTV.최대(70%)
+            // //LTV.최소(1%) <= 대출신청금액 / 담보가치*100 <= LTV.최대(70%)
 
-            //LTV.최소(1%) * 담보가치 <= 대출신청금액 * 100 
-            //LTV.최대(70%) * 담보가치 >= 대출신청금액 * 100
+            // //LTV.최소(1%) * 담보가치 <= 대출신청금액 * 100 
+            // //LTV.최대(70%) * 담보가치 >= 대출신청금액 * 100
 
-            //대출신청금액 : bond_data->get(3), 담보가치 : bond_data->get(12)
-            BigInteger min = BigInteger("1");
-            BigInteger max = BigInteger("70");
+            // //대출신청금액 : bond_data->get(3), 담보가치 : bond_data->get(12)
+            // BigInteger min = BigInteger("1");
+            // BigInteger max = BigInteger("70");
 
-            BigInteger num100 = BigInteger("100");
+            // BigInteger num100 = BigInteger("100");
 
-            WirePtr leftResult = bondData->get(12)->mul(min);
-            WirePtr rightResult = bondData->get(3)->mul(num100);
+            // WirePtr leftResult = bondData->get(12)->mul(min);
+            // WirePtr rightResult = bondData->get(3)->mul(num100);
             
-            addOneAssertion(leftResult->isLessThanOrEqual(rightResult, config.LOG2_FIELD_PRIME - 1),"left greater than right");
+            // addOneAssertion(leftResult->isLessThanOrEqual(rightResult, config.LOG2_FIELD_PRIME - 1),"left greater than right");
 
-            leftResult = bondData->get(12)->mul(max);
-            addOneAssertion(leftResult->isGreaterThanOrEqual(rightResult,config.LOG2_FIELD_PRIME - 1), "left less than right");
+            // leftResult = bondData->get(12)->mul(max);
+            // addOneAssertion(leftResult->isGreaterThanOrEqual(rightResult,config.LOG2_FIELD_PRIME - 1), "left less than right");
 
             return;
         }

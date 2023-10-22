@@ -127,10 +127,6 @@
 //             addOneAssertion(dv->isEqualTo(zeroWire)->add(rt->isEqualTo(merkleTreeGadget->getOutputWires()[0]))->checkNonZero(),
 //                             "membership failed");
 
-//             /* send a commitment */
-//             ECGroupGeneratorGadget *ecGadget = allocate<ECGroupGeneratorGadget>(this, G, r);
-//             addEqualityAssertion(ecGadget->getOutputWires()[0], G_r, "G_r not equal");
-
 //             ecGadget = allocate<ECGroupGeneratorGadget>(this, k_u_, r);
 //             addEqualityAssertion(ecGadget->getOutputWires()[0]->mul(k), K_u, "K_u' not equal");
 

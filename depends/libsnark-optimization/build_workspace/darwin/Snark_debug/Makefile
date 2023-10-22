@@ -630,29 +630,29 @@ Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snark.dir/build.make CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-NFID/generators/NFID.cpp.s
 .PHONY : Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-NFID/generators/NFID.cpp.s
 
-Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.o: Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp.o
-.PHONY : Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.o
+Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.o: Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp.o
+.PHONY : Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.o
 
 # target to build an object file
-Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snark.dir/build.make CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp.o
-.PHONY : Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp.o
+Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snark.dir/build.make CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp.o
+.PHONY : Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp.o
 
-Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.i: Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp.i
-.PHONY : Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.i
+Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.i: Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp.i
+.PHONY : Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.i
 
 # target to preprocess a source file
-Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snark.dir/build.make CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp.i
-.PHONY : Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp.i
+Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snark.dir/build.make CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp.i
+.PHONY : Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp.i
 
-Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.s: Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp.s
-.PHONY : Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.s
+Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.s: Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp.s
+.PHONY : Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.s
 
 # target to generate assembly for a file
-Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snark.dir/build.make CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp.s
-.PHONY : Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp.s
+Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snark.dir/build.make CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp.s
+.PHONY : Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp.s
 
 Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-ZKlay/ECGroupExp.o: Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-ZKlay/ECGroupExp.cpp.o
 .PHONY : Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-ZKlay/ECGroupExp.o
@@ -1924,9 +1924,9 @@ help:
 	@echo "... Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-NFID/generators/NFID.o"
 	@echo "... Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-NFID/generators/NFID.i"
 	@echo "... Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-NFID/generators/NFID.s"
-	@echo "... Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.o"
-	@echo "... Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.i"
-	@echo "... Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.s"
+	@echo "... Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.o"
+	@echo "... Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.i"
+	@echo "... Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.s"
 	@echo "... Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-ZKlay/ECGroupExp.o"
 	@echo "... Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-ZKlay/ECGroupExp.i"
 	@echo "... Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-ZKlay/ECGroupExp.s"

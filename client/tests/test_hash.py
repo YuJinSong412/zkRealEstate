@@ -4,7 +4,6 @@ from zklay.core.mimc import MiMC7, MiMC31
 from zklay.core.sha import Sha256
 from zklay.core.poseidon import Poseidon
 
-
 class testHash(TestCase):
     def __init__(self) -> None:
         super().__init__()

@@ -37,8 +37,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-Gadgets/hash/SubsetSumHashGadget.cpp.o.d"
   "CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-NFID/generators/NFID.cpp.o"
   "CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-NFID/generators/NFID.cpp.o.d"
-  "CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp.o"
-  "CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/AcceptLending.cpp.o.d"
+  "CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp.o"
+  "CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-RealEstate/generators/RequestLending.cpp.o.d"
   "CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-ZKlay/ECGroupExp.cpp.o"
   "CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-ZKlay/ECGroupExp.cpp.o.d"
   "CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/CircuitBuilder-ZKlay/generators/ZKlay.cpp.o"
@@ -139,7 +139,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/depends/misc/misc.cpp.o.d"
   "CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/libsnark/gadgetlib2/infrastructure.cpp.o"
   "CMakeFiles/Snark.dir/Users/song-yujin/dev/zklay/depends/libsnark-optimization/libsnark/gadgetlib2/infrastructure.cpp.o.d"
-  "libSnark.dylib"
+  "libSnark.a"
   "libSnark.pdb"
 )
 

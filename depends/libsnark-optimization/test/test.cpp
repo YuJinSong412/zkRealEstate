@@ -111,7 +111,7 @@ int run(const string &circuit_name, const string &cmdline_arg_2) {
     buildCircuit(context_id) ; 
     if(use_json_pk) { load_pk_json(context_id, pk_file_json.c_str()); }
     else            { readPK(context_id, pk_file_path.c_str()); }
-    generate_sample_inputs(context_id, circuit_name, cmdline_arg_2);
+    generate_sample_inputs(context_id, circuit_name + "_v", cmdline_arg_2);
     runProof(context_id);
     write_proof_json(context_id, proof_file_json.c_str());
     finalizeCircuit(context_id);

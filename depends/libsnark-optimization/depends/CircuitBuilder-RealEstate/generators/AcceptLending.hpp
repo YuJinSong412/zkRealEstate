@@ -24,8 +24,6 @@ namespace RealEstate {
 		WirePtr CT_SKE_bondBalance, H_bondID, CT_creditorPKE_bondKey;
 		
 		WirePtr H_monthlyRepaymentTable;
-
-		WirePtr CT_creditorPKE_bondKey;
 		
 		WirePtr H_loanAmountToReceive_debtor; //azeroth에서 cm
 		WirePtr PK_own_debtor;
@@ -70,7 +68,7 @@ namespace RealEstate {
 
 		static const int bondDataLength = 13;
 
-		static const int tableBalanceLength = 12; //1년으로 고정함
+		static const int tableBalanceLength = 13; //1년으로 고정함 + 본인 pk
 		
 	
 		// /********************* INPUT ***************************/
